@@ -10,6 +10,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* keymap: modifiers
+ * There are a lot of MOD tap.
  * We don't want to use this alone. Every alpha keys switch to default base layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
@@ -48,7 +49,6 @@ RCTLENT,
 RALTENT,     TD_RCAPS,    FN_SPC),
 
 /* keymap 0: default layer
- * There are a lot of MOD tap.
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
  * |   $    |   "  |   «  |   »  |   (  |   )  | BKSP |                                  |Delete|   @  |   +  |   -  |   /  |   *  |   =    |
@@ -69,23 +69,23 @@ RALTENT,     TD_RCAPS,    FN_SPC),
 [BEPO] = LAYOUT_ergodox(
 //BP_DOLLAR,BP_DQOT,      BP_LGIL,     BP_RGIL,     BP_LPRN,     BP_RPRN,     KC_BSPC,        // left hand
 BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_BSPC,
-KC_TAB,      BP_B,        BP_ECUT,     TD_RAND,     BP_O,        BP_EGRV,     KC_LEAD,
+KC_TAB,      BP_B,        BP_ECUT,     TD_RAND,     BP_O,        BP_EGRV,     _______,
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
-BP_ECRC,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        KC_LOCK,
+BP_ECRC,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     L_D,
-                                                                              LCLAHM,      PLYLGUI,
-                                                                                           LCTLENT,
-                                                                 FN_SPC,      TD_LCAPS,    LALTENT,
+                                                                              _______,     _______,
+                                                                                           _______,
+                                                                 _______,     _______,     _______,
 
                           //KC_DEL,    BP_AT,       BP_PLUS,     BP_MINUS,    BP_SLASH,    BP_ASTR,     BP_EQUAL, // right hand
                           KC_DEL,      TD_F6,       TD_F7,       TD_F8,       TD_F9,       TD_F10,      BP_EQUAL, // right hand
-                          KC_LEAD,     BP_DCRC,     BP_V,        BP_D,        BP_L,        BP_J,        BP_Z,
+                          _______,     BP_DCRC,     BP_V,        BP_D,        BP_L,        BP_J,        BP_Z,
                                        BP_C,        BP_T,        BP_S,        BP_R,        BP_N,        BP_M,
-                          KC_LOCK,     BP_APOS,     BP_Q,        BP_G,        BP_H,        BP_F,        BP_CCED,
+                          _______,     BP_APOS,     BP_Q,        BP_G,        BP_H,        BP_F,        BP_CCED,
                                                     R_D,         KC_PGDOWN,   OSL(FLOK),   KC_DOWN,     KC_RIGHT,
-KC_RGUI,     LALTSH,
-RCTLENT,
-RALTENT,     TD_RCAPS,    FN_SPC),
+_______,     _______,
+_______,
+_______,     _______,     _______),
 /* Keymap 1: bepo to azerty base compat layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
@@ -106,22 +106,22 @@ RALTENT,     TD_RCAPS,    FN_SPC),
  */
 [AZER] = LAYOUT_ergodox(
 FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_BSPC,                       // Left hand
-KC_TAB,      KC_B,        FR_EACU,     TD_RAND,     KC_O,        FR_EGRV,     KC_LEAD,
+KC_TAB,      KC_B,        FR_EACU,     TD_RAND,     KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
-KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        KC_LOCK,
+KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
 TD_COPY,     TD_PASTE,    FR_PERC,     KC_PGUP,     L_D,
-                                                                                           LCLAHM,      PLYLGUI,
-                                                                                                        LCTLENT,
-                                                                              FN_SPC,      MO(AZ_S),    LALTENT,
+                                                                                           _______,     _______,
+                                                                                                        _______,
+                                                                              _______,     MO(AZ_S),    _______,
 
                           KC_DEL,      FR_AT,       FR_PLUS,     FR_MINS,     FR_SLSH,     FR_ASTR,     FR_EQL,   // Right hand
-                          KC_LEAD,     KC_LBRC,     KC_V,        KC_D,        KC_L,        KC_J,        FR_Z,
+                          _______,     KC_LBRC,     KC_V,        KC_D,        KC_L,        KC_J,        FR_Z,
                                        KC_C,        KC_T,        KC_S,        KC_R,        KC_N,        FR_M,
-                          KC_LOCK,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        FR_CCED,
+                          _______,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        FR_CCED,
                                                     R_D,         KC_PGDOWN,   OSL(FLOK),   KC_DOWN,     KC_RIGHT,
-KC_RGUI,     LALTSH,
-RCTLENT,
-AZERALT,     TD_RCAPS,    FN_SPC),
+_______,     _______,
+_______,
+AZERALT,     _______,     _______),
 /* Keymap: Qwerty on BÉPO map
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
