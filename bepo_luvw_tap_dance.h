@@ -36,19 +36,30 @@
 #define TD_F8     TD(TRF8)
 #define TD_F9     TD(TRF9)
 #define TD_F10    TD(TRF10)
+#define TD_LGUI   TD(TDLGUI)
+#define TD_RGUI   TD(TDRGUI)
 
 
-/* LSuper
+uint8_t check_tap_state(qk_tap_dance_state_t *state);
+
+
+/* L and R Super/GUI keys with same actions
+ *
+ * LSuper
  *    Tap       Hold
  * 1  KC_RGUI   KC_LGUI
- * 2  LOCK      KC_LGUI + LSHIFT
- */
-
+ * 2  LOCK      KC_LGUI + LSHIFT        */
+void td_lsuper_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
 /* RSuper
  *    Tap       Hold
- * 1  KC_RGUI
- * 2  LOCK      KC_RGUI + RSHIFT
- */
+ * 1  KC_RGUI   KC_LGUI
+ * 2  LOCK      KC_LGUI + LSHIFT        */
+void td_lsuper_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
+
 
 
 // password generator

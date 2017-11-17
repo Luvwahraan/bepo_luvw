@@ -17,7 +17,7 @@ void td_rand_reset(qk_tap_dance_state_t *state, void *user_data)
     unregister_code(BP_P);
   }
 }
-void td_rand_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_rand_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -48,7 +48,7 @@ void td_rand_fn(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F1
-void td_F1_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F1_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -73,7 +73,7 @@ void td_F1_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F2
-void td_F2_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F2_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -98,7 +98,7 @@ void td_F2_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F3
-void td_F3_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F3_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -123,7 +123,7 @@ void td_F3_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F4
-void td_F4_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F4_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -148,7 +148,7 @@ void td_F4_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F5
-void td_F5_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F5_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -173,7 +173,7 @@ void td_F5_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F6
-void td_F6_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F6_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -198,7 +198,7 @@ void td_F6_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F7
-void td_F7_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F7_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -223,7 +223,7 @@ void td_F7_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F8
-void td_F8_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F8_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -248,7 +248,7 @@ void td_F8_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F9
-void td_F9_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F9_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -273,7 +273,7 @@ void td_F9_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 // ALT+F10
-void td_F10_fn(qk_tap_dance_state_t *state, void *user_data)
+void td_F10_each(qk_tap_dance_state_t *state, void *user_data)
 {
   switch (state->count)
   {
@@ -296,24 +296,58 @@ void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)
 }
 // end ALT+F10
 
+/* L and R Super/GUI keys with same actions
+ *
+ * LSuper
+ *    Tap       Hold
+ * 1  KC_RGUI   KC_LGUI
+ * 2  LOCK      KC_LGUI + LSHIFT        */
+void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data)
+{
+}
+void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
+/* RSuper
+ *    Tap       Hold
+ * 1  KC_RGUI   KC_LGUI
+ * 2  LOCK      KC_LGUI + LSHIFT        */
+void td_rsuper_each(qk_tap_dance_state_t *state, void *user_data);
+void td_rsuper_finished(qk_tap_dance_state_t *state, void *user_data);
+void td_rsuper_reset(qk_tap_dance_state_t *state, void *user_data);
+
+
+uint8_t check_tap_state(qk_tap_dance_state_t *state)
+{
+  switch (state->count)
+  {
+    1:
+
+    2:
+
+  }
+}
+
 
 qk_tap_dance_action_t tap_dance_actions[] = {
+  [TDLGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(td_lsuper_each, td_lsuper_finished, td_lsuper_reset),
+  [TDRGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(td_rsuper_each, td_rsuper_finished, td_rsuper_reset),
+
   [TLCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS),
   [TRCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_RSHIFT, KC_CAPS),
 
   [TCOPY]   = ACTION_TAP_DANCE_DOUBLE(KC_LEFT, KC_COPY),
   [TPASTE]  = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PASTE),
 
-  [TRAND]   = ACTION_TAP_DANCE_FN_ADVANCED(td_rand_fn,  td_rand_finished,   td_rand_reset),
+  [TRAND]   = ACTION_TAP_DANCE_FN_ADVANCED(td_rand_each,  td_rand_finished,   td_rand_reset),
 
-  [TRF1] = ACTION_TAP_DANCE_FN_ADVANCED(td_F1_fn, td_F1_finished,  td_F1_reset),
-  [TRF2] = ACTION_TAP_DANCE_FN_ADVANCED(td_F2_fn, td_F2_finished,  td_F2_reset),
-  [TRF3] = ACTION_TAP_DANCE_FN_ADVANCED(td_F3_fn, td_F3_finished,  td_F3_reset),
-  [TRF4] = ACTION_TAP_DANCE_FN_ADVANCED(td_F4_fn, td_F4_finished,  td_F4_reset),
-  [TRF5] = ACTION_TAP_DANCE_FN_ADVANCED(td_F5_fn, td_F5_finished,  td_F5_reset),
-  [TRF6] = ACTION_TAP_DANCE_FN_ADVANCED(td_F6_fn, td_F6_finished,  td_F6_reset),
-  [TRF7] = ACTION_TAP_DANCE_FN_ADVANCED(td_F7_fn, td_F7_finished,  td_F7_reset),
-  [TRF8] = ACTION_TAP_DANCE_FN_ADVANCED(td_F8_fn, td_F8_finished,  td_F8_reset),
-  [TRF9] = ACTION_TAP_DANCE_FN_ADVANCED(td_F9_fn, td_F9_finished,  td_F9_reset),
-  [TRF10]= ACTION_TAP_DANCE_FN_ADVANCED(td_F10_fn,td_F10_finished, td_F10_reset),
+  [TRF1] = ACTION_TAP_DANCE_FN_ADVANCED(td_F1_each, td_F1_finished,  td_F1_reset),
+  [TRF2] = ACTION_TAP_DANCE_FN_ADVANCED(td_F2_each, td_F2_finished,  td_F2_reset),
+  [TRF3] = ACTION_TAP_DANCE_FN_ADVANCED(td_F3_each, td_F3_finished,  td_F3_reset),
+  [TRF4] = ACTION_TAP_DANCE_FN_ADVANCED(td_F4_each, td_F4_finished,  td_F4_reset),
+  [TRF5] = ACTION_TAP_DANCE_FN_ADVANCED(td_F5_each, td_F5_finished,  td_F5_reset),
+  [TRF6] = ACTION_TAP_DANCE_FN_ADVANCED(td_F6_each, td_F6_finished,  td_F6_reset),
+  [TRF7] = ACTION_TAP_DANCE_FN_ADVANCED(td_F7_each, td_F7_finished,  td_F7_reset),
+  [TRF8] = ACTION_TAP_DANCE_FN_ADVANCED(td_F8_each, td_F8_finished,  td_F8_reset),
+  [TRF9] = ACTION_TAP_DANCE_FN_ADVANCED(td_F9_each, td_F9_finished,  td_F9_reset),
+  [TRF10]= ACTION_TAP_DANCE_FN_ADVANCED(td_F10_each,td_F10_finished, td_F10_reset),
 };
