@@ -39,6 +39,20 @@
 #define TD_LGUI   TD(TDLGUI)
 #define TD_RGUI   TD(TDRGUI)
 
+// Easy Tap Dance states
+enum
+{
+  UNKNOWN_TD  = 0,
+  SINGLE_HOLD = 1,
+  SINGLE_TAP  = 2,
+  DOUBLE_HOLD = 3,
+  DOUBLE_TAP  = 4,
+  DOUBLE_TAP  = 5,
+  TRIPLE_HOLD = 6,
+  TRIPLE_TAP  = 7,
+  TRIPLE_TAP  = 8,
+}
+
 
 uint8_t check_tap_state(qk_tap_dance_state_t *state);
 
@@ -49,14 +63,14 @@ uint8_t check_tap_state(qk_tap_dance_state_t *state);
  *    Tap       Hold
  * 1  KC_RGUI   KC_LGUI
  * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_lsuper_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data);
 void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
 /* RSuper
  *    Tap       Hold
  * 1  KC_RGUI   KC_LGUI
  * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_lsuper_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data);
 void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
 
@@ -65,75 +79,75 @@ void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
 // password generator
 void td_rand_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_rand_reset(qk_tap_dance_state_t *state, void *user_data);
-void td_rand_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_rand_each(qk_tap_dance_state_t *state, void *user_data);
 // end password generator
 
 
 // ALT+F1
-void td_F1_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F1_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F1_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F1_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F1
 
 
 // ALT+F2
-void td_F2_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F2_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F2_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F2_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F2
 
 
 // ALT+F3
-void td_F3_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F3_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F3_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F3_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F3
 
 
 // ALT+F4
-void td_F4_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F4_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F4_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F4_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F4
 
 
 // ALT+F5
-void td_F5_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F5_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F5_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F5_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F5
 
 
 // ALT+F6
-void td_F6_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F6_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F6_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F6_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F6
 
 
 // ALT+F7
-void td_F7_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F7_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F7_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F7_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F7
 
 
 // ALT+F8
-void td_F8_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F8_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F8_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F8_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F8
 
 
 // ALT+F9
-void td_F9_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F9_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F9_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F9_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F9
 
 
 // ALT+F10
-void td_F10_fn(qk_tap_dance_state_t *state, void *user_data);
+void td_F10_each(qk_tap_dance_state_t *state, void *user_data);
 void td_F10_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data);
 // end ALT+F10
