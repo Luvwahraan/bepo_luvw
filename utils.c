@@ -3,12 +3,6 @@
 #include "keymap_french.h"
 #include "utils.h"
 
-
-inline uint8_t U8(uint8_t i)
-{
-  return (sizeof(uint8_t) << i);
-}
-
 void send_keystrokes(uint8_t key, ...)
 {
     va_list vl;

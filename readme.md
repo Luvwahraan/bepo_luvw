@@ -113,6 +113,10 @@ Pressée         | Tapée
 
 ### Tap dance
 
+Les touches Tap Dance peuvent être tapées relachées, ou tapées et relachées plusieurs fois et maintenues.
+
+#### Tapées
+
 Touche    | tap1     | tap2     | tap3       | tap4           | tap5
 ----------|----------|----------|------------|----------------|-------
  `LSHIFT` | `LSHIFT` | `LSHIFT` | `CAPSLOCK` |                |
@@ -128,6 +132,18 @@ Touche    | tap1     | tap2     | tap3       | tap4           | tap5
  `-`      | `-`      | `F8`     | `ALT+F8`   | `CTRL+ALT+F8`  |
  `/`      | `/`      | `F9`     | `ALT+F9`   | `CTRL+ALT+F9`  |
  `*`      | `*`      | `F10`    | `ALT+F10`  | `CTRL+ALT+F10` |
+
+#### Tapées et/ou maintenuer
+
+L et R Super/GUI avec les mêmes actions.
+
+nb tap | Tenue          | Relachées
+----------------------------------------
+1      | KC_LGUI        | KC_RGUI
+2      | Affichage FNCT | LALT + LSHIFT
+
+
+
 
 # Crédits
 

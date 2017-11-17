@@ -1,6 +1,8 @@
 #ifndef BEPO_LUVW_TAP_DANCE
 #define BEPO_LUVW_TAP_DANCE
 
+#include "utils.h"
+
 // Tap dance
 #define TCOPY     0
 #define TPASTE    1
@@ -39,7 +41,7 @@
 #define TD_LGUI   TD(TDLGUI)
 #define TD_RGUI   TD(TDRGUI)
 
-/* Easy Tap Dance states − max tap x7
+/* Easy Tap Dance states
  * bit      desc
  * 8        key state: 0 hold 1 tapped
  * 7        single tap
@@ -48,36 +50,28 @@
  */
 enum
 {
-  UNKNOWN_TD  = 0b00000000, // 0
-  SINGLE_TD   = 0b00000010, // 2
-  DOUBLE_TD   = 0b00000100, // 4
-  TRIPLE_TD   = 0b00001000, // 8
-  QUADRU_TD   = 0b00010000, // 16
-  FIVEFOLD_TD = 0b00100000, // 32
-  SIXFOLD_TD  = 0b01000000, // 64
-  SEVENFOLD_TD= 0b10000000, // 128
-}
+  UNKNOWN_TD  = 0,      // 0
+  SINGLE_TD   = 1,      // 2    0b000000001 hold; 0b10000001 tapped
+  DOUBLE_TD   = 2,      // 4    0b000000100 hold; 0b10000010 tapped
+  TRIPLE_TD   = 3,      // 8
+  QUADRU_TD   = 4,      // 16
+  FIVEFOLD_TD = 5,      // 32
+  SIXFOLD_TD  = 6,      // 64
+  TAPPED_TD   = U32(7), // 128  0b000000000       0b10000000
+};
 
 
-uint8_t check_tap_state(qk_tap_dance_state_t *state);
+uint32_t check_tap_state(qk_tap_dance_state_t *state);
 
 
 /* L and R Super/GUI keys with same actions
- *
- * LSuper
- *    Tap       Hold
- * 1  KC_RGUI   KC_LGUI
- * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data);
-void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
-void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
-/* RSuper
- *    Tap       Hold
- * 1  KC_RGUI   KC_LGUI
- * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data);
-void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
-void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
+ * nb Hold     | Tap
+ * ----------------------------
+ * 1  KC_LGUI  | KC_RGUI
+ * 2  MO(FNCT) | LALT + LSHIFT
+ */
+void td_super_finished(qk_tap_dance_state_t *state, void *user_data);
+void td_super_reset(qk_tap_dance_state_t *state, void *user_data);
 
 
 

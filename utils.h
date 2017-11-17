@@ -1,10 +1,7 @@
 #ifndef BEPO_LUVW_UTILS
 #define BEPO_LUVW_UTILS
 
-#define U32(layer)  (1UL << layer)
-
-
-uint8_t U8(uint8_t);
+#define U32(x)  (1UL << x)
 
 enum next_key_down_up
 {

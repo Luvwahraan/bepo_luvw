@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "keymap_bepo.h"
 #include "keymap_french.h"
+#include "utils.h"
+#include "bepo_luvw_layouts.h"
 #include "bepo_luvw_shortcuts.h"
 #include "bepo_luvw_tap_dance.h"
 
@@ -185,7 +187,7 @@ void td_F6_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F6_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_AT); }
+  if (state->count < 1)  { register_code(BP_AT); }
 }
 void td_F6_reset(qk_tap_dance_state_t *state, void *user_data)
 {
@@ -210,11 +212,11 @@ void td_F7_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F7_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_PLUS); }
+  if (state->count < 1)  { register_code(BP_PLUS); }
 }
 void td_F7_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_PLUS); return; }
+  if (state->count < 1)  { unregister_code(BP_PLUS); return; }
   if (state->count >= 2) { unregister_code(KC_F7); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -235,11 +237,11 @@ void td_F8_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F8_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_MINUS); }
+  if (state->count < 1)  { register_code(BP_MINUS); }
 }
 void td_F8_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_MINUS); return; }
+  if (state->count < 1)  { unregister_code(BP_MINUS); return; }
   if (state->count >= 2) { unregister_code(KC_F8); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -260,11 +262,11 @@ void td_F9_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F9_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_SLASH); }
+  if (state->count < 1)  { register_code(BP_SLASH); }
 }
 void td_F9_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_SLASH); return; }
+  if (state->count < 1)  { unregister_code(BP_SLASH); return; }
   if (state->count >= 2) { unregister_code(KC_F9); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -289,45 +291,50 @@ void td_F10_finished(qk_tap_dance_state_t *state, void *user_data)
 }
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_ASTR); return; }
+  if (state->count < 1)  { unregister_code(BP_ASTR); return; }
   if (state->count >= 2) { unregister_code(KC_F10); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F10
 
-/* L and R Super/GUI keys with same actions
- *
- * LSuper
- *    Tap       Hold
- * 1  KC_RGUI   KC_LGUI
- * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_lsuper_each(qk_tap_dance_state_t *state, void *user_data)
+
+
+// Super/GUI keys
+void td_super_finished(qk_tap_dance_state_t *state, void *user_data)
 {
+  // single and double possible, so 4 possibilities
+  switch (check_tap_state(state))
+  {
+    case U32(SINGLE_TD): register_code(KC_RGUI); break;               // single hold
+    case (TAPPED_TD | U32(SINGLE_TD)): register_code(KC_LGUI); break; // single tap
+    case U32(DOUBLE_TD): register_code(KC_LALT | KC_LSHIFT); break;   // double hold
+    case (TAPPED_TD | U32(DOUBLE_TD)): layer_or(U32(FNCT)); break;    // double tap
+  }
 }
-void td_lsuper_finished(qk_tap_dance_state_t *state, void *user_data);
-void td_lsuper_reset(qk_tap_dance_state_t *state, void *user_data);
-/* RSuper
- *    Tap       Hold
- * 1  KC_RGUI   KC_LGUI
- * 2  LOCK      KC_LGUI + LSHIFT        */
-void td_rsuper_each(qk_tap_dance_state_t *state, void *user_data);
-void td_rsuper_finished(qk_tap_dance_state_t *state, void *user_data);
-void td_rsuper_reset(qk_tap_dance_state_t *state, void *user_data);
-
-
-
-
-uint8_t check_tap_state(qk_tap_dance_state_t *state)
-{
-  if (state->interrupted || state->pressed == 0) return 0;
-  else if (state->pressed) return 1;
+void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
+  switch (check_tap_state(state))
+  {
+    case U32(SINGLE_TD): unregister_code(KC_RGUI); break;
+    case (TAPPED_TD | U32(SINGLE_TD)): unregister_code(KC_LGUI); break;
+    case U32(DOUBLE_TD): unregister_code(KC_LALT | KC_LSHIFT); break;
+    case (TAPPED_TD | U32(DOUBLE_TD)): layer_xor(U32(FNCT)); break;
+  }
 }
 
+
+
+uint32_t check_tap_state(qk_tap_dance_state_t *state)
+{
+  uint32_t _tap_dance_state = U32(state->count);
+  if (state->interrupted || state->pressed == 0) return _tap_dance_state;
+  else if (state->pressed) return (TAPPED_TD | _tap_dance_state);
+  return UNKNOWN_TD;
+}
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [TDLGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(td_lsuper_each, td_lsuper_finished, td_lsuper_reset),
-  [TDRGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(td_rsuper_each, td_rsuper_finished, td_rsuper_reset),
+  [TDLGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_super_finished, td_super_reset),
+  //[TDRGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_rsuper_finished, td_rsuper_reset),*/
 
   [TLCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS),
   [TRCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_RSHIFT, KC_CAPS),
