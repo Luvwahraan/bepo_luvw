@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| LOCK |                                  | LOCK |------+------+------+------+------+--------|
  * |        | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |      |                                  |      | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |             | C+alt|lsuper|      |rsuper|alt+sh|             |      |      |      |      |      |
+ *   |      |      |      |      |      |             | C+alt|Super |      | Super|alt+sh|             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
  *                                             |  FN  |      |lctrl |      |rctrl |      |  FN  |
  *                                             | space|lshift|------|      |------|rshift|space |
@@ -34,7 +34,7 @@ _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LOCK,
 _______,     _______,     _______,     _______,     _______,
-                                                                              LCLAHM,      PLYLGUI,
+                                                                              LCLAHM,      TD_GUI,
                                                                                            LCTLENT,
                                                                  FN_SPC,      TD_LCAPS,    LALTENT,
 
@@ -43,7 +43,7 @@ _______,     _______,     _______,     _______,     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                           KC_LOCK,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                                     _______,     _______,     _______,     _______,     _______,
-KC_RGUI,     LALTSH,
+TD_RGUI,     LCLAHM,
 RCTLENT,
 RALTENT,     TD_RCAPS,    FN_SPC),
 
