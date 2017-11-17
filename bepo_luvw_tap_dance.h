@@ -40,7 +40,7 @@ enum
 #define TD_F8     TD(TRF8)
 #define TD_F9     TD(TRF9)
 #define TD_F10    TD(TRF10)
-#define TD_GUI   TD(TDGUI)
+#define TD_GUI    TD(TDGUI)
 
 /* Easy Tap Dance states
  * bit      desc
