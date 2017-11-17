@@ -8,8 +8,12 @@
 
 
 #define BP_COPY     LCTL(BP_C)
+#define BP_CUT      LCTL(BP_X)
 #define BP_PASTE    LCTL(BP_V)
 #define BP_UNDO     LCTL(BP_Z)
+#define BP_NEW      LCTL(BP_N)
+#define BP_SAVE     LCTL(BP_S)
+#define BP_QUIT     LCTL(BP_Q)
 #define BP_FIND     LCTL(BP_F)
 #define BP_REPL     LCTL(BP_R)
 
