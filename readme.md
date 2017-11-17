@@ -2,7 +2,9 @@
 # Clavier BÉPO pour l’Ergodone.
 
 Cette keymap a été pensée pour la disposition BÉPO (http://bepo.fr), qui est une disposition de clavier francophone, ergonomique et libre, élaborée selon la méthode Dvorak.
+
 L’adaptation de cette disposition à l’Ergodone (probablement utilisable avec l’Ergodox) a été réalisée en essayant de profiter de l’ergonomie du clavier pour conserver l’alternance des mains propre au BÉPO.
+
 Les couches de base (BÉPO et BÉPO sur disposition AZERTY) ont été reprises de celles de la keymap BÉPO proposée par Olivier Smedts (un grand merci à lui et à ceux qui ont collaboré avec lui), fournies avec [la source de QMK](https://github.com/qmk/qmk_firmware/tree/master/layouts/community/ergodox/bepo).
 
 Un certains nombres de fonctionnalités du firmware QMK sont utilisés dans cette keymap. Elles sont expliquées dans la section ***Particularités*** et détaillées dans la section ***Fonctions***.
