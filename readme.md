@@ -7,26 +7,27 @@ L’adaptation de cette disposition à l’Ergodone (probablement utilisable ave
 
 Les couches de base (BÉPO et BÉPO sur disposition AZERTY) ont été reprises de celles de la keymap BÉPO proposée par Olivier Smedts (un grand merci à lui et à ceux qui ont collaboré avec lui), fournies avec [la source de QMK](https://github.com/qmk/qmk_firmware/tree/master/layouts/community/ergodox/bepo).
 
-Un certains nombres de fonctionnalités du firmware QMK sont utilisés dans cette keymap. Elles sont expliquées dans la section ***Particularités*** et détaillées dans la section ***Fonctions***.
+Un certains nombre de fonctionnalités du firmware QMK sont utilisées dans cette keymap. Elles sont expliquées dans la section ***Particularités*** et détaillées dans la section ***Fonctions***.
 
 
 ## Particularités
 
 ### Layouts
 
-L’une des principales fonctionnalités des claviers programmables est la gestions des calques, qui permet de superposer et alterner des dispositions différentes.
+L’une des principales fonctionnalités des claviers programmables est la gestion des calques, qui permet de superposer et alterner des dispositions différentes sans modifier celle du système.
 
 Les touches mod ont été séparées en calques pour plus de souplesse, et proposées associées aux couches de bases.
-Les couches de bases proposées sont donc en fait deux calques : **BÉPO** + **MODA** ou **AZER** + **MODA** par exemple.
+Les couches de bases proposées sont donc composées de deux calques pour être utilisables (**BÉPO** + **MODA** par exemple).
 
-Le calque par défaut est un calque Modificateurs (**MODA**). Il n’est donc pas possible d’écrire avec, mais un appuis sur n’importe quelle touche alpha initialise la macro gérant les associations de calques, passant la disposition en BÉPO.
+Le calque par défaut (celui avec l’id 0) est un calque modificateurs (**MODA**). Il n’est donc pas possible d’écrire avec, mais un appui sur n’importe quelle touche alpha initialise la macro gérant les associations de calques, passant la disposition en BÉPO.
 
 ### Modificateurs
 
 Les modificateurs sont placés symétriquement sur les pouces, de manière à les combiner facilement sans léser l’alternance des mains.
 
-La plupart d’entre eux sont combinés avec Mod Tap.
-Cette fonction du firmware QMK permet d’avoir deux fonctions sur une seule touche mod. : une lorsqu’on la garde appuyée (la modification) et une lorsqu’elle est pressée et relachée normalement.
+La plupart d’entre eux sont combinés avec Mod Tap ou Tap Dance.
+La fonctionnalité Mod Tap du firmware QMK permet d’avoir deux fonctions sur une seule touche mod. : une lorsqu’on la garde appuyée (la modification) et une lorsqu’elle est pressée et relachée normalement.
+
 
 ### LEAD
 
@@ -42,12 +43,15 @@ Elle a pour effet de placer un calque de la disposition inversée (le `E` devien
 
 ### Tap Dance
 
+Cette fonctionnalité permet de gérer finement les répétitions de touches.
+
 La touche verr.maj n’étant pas placé, elle est accessibles grace la fonctionnalité Tap Dance, en pressant deux fois une des touches *SHIFT*.
 
 En pressant plusieurs fois la touche `P`, on peut générer des caractères aléatoires.
 
 Les raccourcis de `F1` à `F10` sont accessibles en tapant plusieurs fois les touches `"` à `)` sur la première ligne. Par exemple `(`→`(`→`(` ferme la fenêtre en cours, en envoyant la séquence `ALT+F4`.
 
+Certains modificateurs s’utilisent également en les tapants plusieurs fois.
 
 ### Bureaux virtuels
 
