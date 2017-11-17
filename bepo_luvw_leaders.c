@@ -27,10 +27,11 @@ void matrix_scan_user(void) {
     }
 
     /* Tab Lead or Z Lead
-     * Toggle mirror layer */
+     * Toggle bépo mirror layer
+     * Active only when bépo activated */
     SEQ_ONE_KEY((KC_TAB|BP_Z))
     {
-      layer_xor(biton32(OPEB));
+      if (layer_state | U32(BEPO) ) layer_xor(biton32(OPEB));
     }
 
     /* Space space
