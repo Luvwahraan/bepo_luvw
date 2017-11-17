@@ -4,23 +4,26 @@
 #include "utils.h"
 
 // Tap dance
-#define TCOPY     0
-#define TPASTE    1
-#define TRAND     2
-#define TLCAPS    3
-#define TRCAPS    4
-#define TRF1      5
-#define TRF2      6
-#define TRF3      7
-#define TRF4      8
-#define TRF5      9
-#define TRF6      10
-#define TRF7      11
-#define TRF8      12
-#define TRF9      13
-#define TRF10     14
-#define TDLGUI    15
-#define TDRGUI    16
+enum
+{
+  TCOPY = 0,
+  TPASTE,
+  TRAND,
+  TLCAPS,
+  TRCAPS,
+  TRF1,
+  TRF2,
+  TRF3,
+  TRF4,
+  TRF5,
+  TRF6,
+  TRF7,
+  TRF8,
+  TRF9,
+  TRF10,
+  TDLGUI,
+  TDRGUI,
+};
 
 // Tap dance keys
 #define TD_COPY   TD(TCOPY)
