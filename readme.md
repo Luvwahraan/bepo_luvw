@@ -95,11 +95,8 @@ Elles sont utilisables via les pouces sur la couche **FNCT**, elle-même activab
 Pressée         | Tapée
 ----------------|----------
 `Ctrl + Alt`    | `Home`
-`LSuper`        | `Play/Pause`
 `AltGr + Shift` | `End`
-`LCtrl`         | `Enter`
 `LAlt`          | `Enter`
-`RCtrl`         | `Enter`
 `AltGr`         | `Enter`
 `LShift`        | `CapsLock`
 `RShift`        | `CapsLock`
@@ -114,8 +111,7 @@ Pressée         | Tapée
 `Space` | `Space` | | | FN lock
 `L` | `O` | `L` | | Keyboard lock/unlock
 `P` | `O` | `W` | `A` | Sys power
-`Tab` | `LEAD` | | | Toggle BÉPO mirroir
-`Z` | `LEAD` | | | Toggle BÉPO mirroir
+`Tab` ou `Z` | `LEAD` | | | Toggle BÉPO mirroir
 
 ### Tap dance
 
