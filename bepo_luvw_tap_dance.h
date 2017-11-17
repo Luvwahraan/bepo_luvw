@@ -21,8 +21,7 @@ enum
   TRF8,
   TRF9,
   TRF10,
-  TDLGUI,
-  TDRGUI,
+  TDGUI,
 };
 
 // Tap dance keys
@@ -41,8 +40,7 @@ enum
 #define TD_F8     TD(TRF8)
 #define TD_F9     TD(TRF9)
 #define TD_F10    TD(TRF10)
-#define TD_LGUI   TD(TDLGUI)
-#define TD_RGUI   TD(TDRGUI)
+#define TD_GUI   TD(TDGUI)
 
 /* Easy Tap Dance states
  * bit      desc
