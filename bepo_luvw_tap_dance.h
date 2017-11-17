@@ -22,6 +22,8 @@ enum
   TRF9,
   TRF10,
   TDGUI,
+  TDLCTRL,
+  TDRCTRL,
 };
 
 // Tap dance keys
@@ -40,7 +42,10 @@ enum
 #define TD_F8     TD(TRF8)
 #define TD_F9     TD(TRF9)
 #define TD_F10    TD(TRF10)
-#define TD_GUI   TD(TDGUI)
+#define TD_GUI    TD(TDGUI)
+#define TD_LCTRL  TD(TDLCTRL)
+#define TD_RCTRL  TD(TDRCTRL)
+
 
 /* Easy Tap Dance states
  * bit      desc
@@ -60,9 +65,24 @@ enum
   SIXFOLD_TD  = 6,      // 64
   TAPPED_TD   = U32(7), // 128  0b000000000       0b10000000
 };
-
-
 uint32_t check_tap_state(qk_tap_dance_state_t *state);
+
+
+/* LCTRL & RCTRL
+ * nb Hold          | Tap
+ * ----------------------------
+ * 1  L/RCTRL         | ENTER
+ * 2  L/RCTRL + LALT  | ENTER
+ */
+void td_allctrl_finished(qk_tap_dance_state_t *, uint8_t);
+void td_allctrl_reset(qk_tap_dance_state_t *, uint8_t);
+void td_ctrl_finished(qk_tap_dance_state_t *, void*);
+void td_lctrl_reset(qk_tap_dance_state_t *, void*);
+void td_rctrl_finished(qk_tap_dance_state_t *, void *);
+void td_rctrl_reset(qk_tap_dance_state_t *, void *);
+// end LCTRL & RCTRL
+
+
 
 
 /* L and R Super/GUI keys with same actions
@@ -73,7 +93,7 @@ uint32_t check_tap_state(qk_tap_dance_state_t *state);
  */
 void td_super_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_super_reset(qk_tap_dance_state_t *state, void *user_data);
-
+// end Super/GUI
 
 
 // password generator

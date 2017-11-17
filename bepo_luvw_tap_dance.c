@@ -322,6 +322,39 @@ void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
   }
 }
 
+/* LCTRL & RCTRL
+ * nb Hold          | Tap
+ * ----------------------------
+ * 1  L/RCTRL         | ENTER
+ * 2  L/RCTRL + LALT  | ENTER
+ */
+void td_allctrl_finished(qk_tap_dance_state_t *state, uint8_t _kc)
+{
+  // single and double possible, so 4 possibilities
+  switch (check_tap_state(state))
+  {
+    case U32(SINGLE_TD): register_code(_kc); break;                         // single hold
+    case (TAPPED_TD | U32(SINGLE_TD)): register_code(KC_ENTER); break;      // single tap
+    case U32(DOUBLE_TD): register_code(_kc) ; register_code(KC_LALT); break;// double hold
+    case (TAPPED_TD | U32(DOUBLE_TD)): register_code(KC_ENTER); break;      // double tap
+  }
+}
+void td_allctrl_reset(qk_tap_dance_state_t *state, uint8_t _kc)
+{
+  switch (check_tap_state(state))
+  {
+    case U32(SINGLE_TD): unregister_code(_kc); break;
+    case (TAPPED_TD | U32(SINGLE_TD)): unregister_code(KC_ENTER); break;
+    case U32(DOUBLE_TD): unregister_code(_kc) ; unregister_code(KC_LALT); break;
+    case (TAPPED_TD | U32(DOUBLE_TD)): register_code(KC_ENTER); break;
+  }
+}
+void td_lctrl_finished(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_finished(state, KC_LCTRL); }
+void td_lctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_reset(state, KC_LCTRL); }
+void td_rctrl_finished(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_finished(state, KC_RCTRL); }
+void td_rctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_reset(state, KC_RCTRL); }
+// end LCTRL & RCTRL
+
 
 
 uint32_t check_tap_state(qk_tap_dance_state_t *state)
@@ -333,7 +366,10 @@ uint32_t check_tap_state(qk_tap_dance_state_t *state)
 }
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [TDGUI]  = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_super_finished, td_super_reset),
+  [TDGUI]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_super_finished, td_super_reset),
+
+  [TDLCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lctrl_finished, td_lctrl_reset),
+  [TDRCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_rctrl_finished, td_rctrl_reset),
 
   [TLCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS),
   [TRCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_RSHIFT, KC_CAPS),
