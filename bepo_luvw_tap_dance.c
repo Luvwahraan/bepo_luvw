@@ -316,15 +316,12 @@ void td_rsuper_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_rsuper_reset(qk_tap_dance_state_t *state, void *user_data);
 
 
+
+
 uint8_t check_tap_state(qk_tap_dance_state_t *state)
 {
-  switch (state->count)
-  {
-    1:
-
-    2:
-
-  }
+  if (state->interrupted || state->pressed == 0) return 0;
+  else if (state->pressed) return 1;
 }
 
 
@@ -340,14 +337,14 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [TRAND]   = ACTION_TAP_DANCE_FN_ADVANCED(td_rand_each,  td_rand_finished,   td_rand_reset),
 
-  [TRF1] = ACTION_TAP_DANCE_FN_ADVANCED(td_F1_each, td_F1_finished,  td_F1_reset),
-  [TRF2] = ACTION_TAP_DANCE_FN_ADVANCED(td_F2_each, td_F2_finished,  td_F2_reset),
-  [TRF3] = ACTION_TAP_DANCE_FN_ADVANCED(td_F3_each, td_F3_finished,  td_F3_reset),
-  [TRF4] = ACTION_TAP_DANCE_FN_ADVANCED(td_F4_each, td_F4_finished,  td_F4_reset),
-  [TRF5] = ACTION_TAP_DANCE_FN_ADVANCED(td_F5_each, td_F5_finished,  td_F5_reset),
-  [TRF6] = ACTION_TAP_DANCE_FN_ADVANCED(td_F6_each, td_F6_finished,  td_F6_reset),
-  [TRF7] = ACTION_TAP_DANCE_FN_ADVANCED(td_F7_each, td_F7_finished,  td_F7_reset),
-  [TRF8] = ACTION_TAP_DANCE_FN_ADVANCED(td_F8_each, td_F8_finished,  td_F8_reset),
-  [TRF9] = ACTION_TAP_DANCE_FN_ADVANCED(td_F9_each, td_F9_finished,  td_F9_reset),
-  [TRF10]= ACTION_TAP_DANCE_FN_ADVANCED(td_F10_each,td_F10_finished, td_F10_reset),
+  [TRF1]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F1_each, td_F1_finished,  td_F1_reset),
+  [TRF2]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F2_each, td_F2_finished,  td_F2_reset),
+  [TRF3]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F3_each, td_F3_finished,  td_F3_reset),
+  [TRF4]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F4_each, td_F4_finished,  td_F4_reset),
+  [TRF5]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F5_each, td_F5_finished,  td_F5_reset),
+  [TRF6]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F6_each, td_F6_finished,  td_F6_reset),
+  [TRF7]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F7_each, td_F7_finished,  td_F7_reset),
+  [TRF8]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F8_each, td_F8_finished,  td_F8_reset),
+  [TRF9]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F9_each, td_F9_finished,  td_F9_reset),
+  [TRF10]   = ACTION_TAP_DANCE_FN_ADVANCED(td_F10_each,td_F10_finished, td_F10_reset),
 };

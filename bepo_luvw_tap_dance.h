@@ -39,18 +39,23 @@
 #define TD_LGUI   TD(TDLGUI)
 #define TD_RGUI   TD(TDRGUI)
 
-// Easy Tap Dance states
+/* Easy Tap Dance states − max tap x7
+ * bit      desc
+ * 8        key state: 0 hold 1 tapped
+ * 7        single tap
+ * 6        double tap
+ * 5        ...
+ */
 enum
 {
-  UNKNOWN_TD  = 0,
-  SINGLE_HOLD = 1,
-  SINGLE_TAP  = 2,
-  DOUBLE_HOLD = 3,
-  DOUBLE_TAP  = 4,
-  DOUBLE_TAP  = 5,
-  TRIPLE_HOLD = 6,
-  TRIPLE_TAP  = 7,
-  TRIPLE_TAP  = 8,
+  UNKNOWN_TD  = 0b00000000, // 0
+  SINGLE_TD   = 0b00000010, // 2
+  DOUBLE_TD   = 0b00000100, // 4
+  TRIPLE_TD   = 0b00001000, // 8
+  QUADRU_TD   = 0b00010000, // 16
+  FIVEFOLD_TD = 0b00100000, // 32
+  SIXFOLD_TD  = 0b01000000, // 64
+  SEVENFOLD_TD= 0b10000000, // 128
 }
 
 
