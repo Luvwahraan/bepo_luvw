@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 _______,     _______,     _______,     _______,     _______,     _______,     _______,        // left hand
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LEAD,
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),
-_______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LOCK,
+_______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LEAD,
 _______,     _______,     _______,     _______,     _______,
                                                                               LCLAHM,      TD_GUI,
                                                                                            LCTLENT,
@@ -42,7 +42,7 @@ _______,     _______,     _______,     _______,     _______,
                           _______,     _______,     _______,     _______,     _______,     _______,     _______, // right hand
                           KC_LEAD,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
-                          KC_LOCK,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
+                          KC_LEAD,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                                     _______,     _______,     _______,     _______,     _______,
 TD_GUI,     LCLAHM,
 RCTLENT,
@@ -181,7 +181,7 @@ _______,     MO(QW_S),    _______),
 BP_EQUAL,    BP_ASTR,     BP_MINUS,    BP_PLUS,     BP_SLASH,    BP_AT,       KC_DEL,                               // left hand
 BP_Z,        BP_J,        BP_L,        BP_D,        BP_V,        BP_DCRC,     KC_LEAD,                                 //
 BP_M,        BP_N,        BP_R,        BP_S,        BP_T,        BP_C,                                              //
-BP_CCED,     BP_F,        BP_H,        BP_G,        BP_Q,        BP_APOS,     KC_LOCK,                              //
+BP_CCED,     BP_F,        BP_H,        BP_G,        BP_Q,        BP_APOS,     KC_LEAD,                              //
 _______,     _______,     _______,     _______,     _______,                                                        //
                                                                                            _______,     _______,    //
                                                                                                         _______,    //
@@ -190,7 +190,7 @@ _______,     _______,     _______,     _______,     _______,                    
                           KC_BSPC,     TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
                           KC_LEAD,     BP_EGRV,     BP_O,        TD_RAND,     BP_ECUT,     BP_B,        KC_TAB,     //
                                        BP_COMMA,    BP_E,        BP_I,        BP_U,        BP_A,        BP_W,       //
-                          KC_LOCK,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     BP_ECRC,    //
+                          KC_LEAD,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     BP_ECRC,    //
                                                     _______,     _______,     BP_PERC,     _______,     _______,    //
 _______,     _______,                                                                                               //
 _______,                                                                                                            //
