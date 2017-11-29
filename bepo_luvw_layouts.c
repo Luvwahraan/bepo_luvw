@@ -44,7 +44,7 @@ _______,     _______,     _______,     _______,     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                           KC_LOCK,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                                     _______,     _______,     _______,     _______,     _______,
-TD_RGUI,     LCLAHM,
+TD_GUI,     LCLAHM,
 RCTLENT,
 RALTENT,     TD_RCAPS,    FN_SPC),
 
