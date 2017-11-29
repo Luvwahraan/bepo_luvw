@@ -8,6 +8,8 @@
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
+  static bool locked = false;
+
   LEADER_DICTIONARY() {
     leading = false;
     leader_end();
@@ -45,12 +47,15 @@ void matrix_scan_user(void) {
      * Keyboard lock */
     SEQ_THREE_KEYS(BP_L, BP_O, BP_L)
     {
-      uint32_t lockBit = biton32(LOCK);
-      if (layer_state != lockBit)
+      if (!locked)
       {
-        default_layer_set(lockBit);
-        clear_keyboard();
-        layer_clear();
+        locked = true;
+        layer_on(LOCK);
+      }
+      else
+      {
+        layer_off(LOCK);
+        locked = false;
       }
     }
 
