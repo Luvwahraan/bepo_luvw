@@ -56,12 +56,12 @@ enum
 enum
 {
   UNKNOWN_TD  = 0,      // 0
-  SINGLE_TD   = 1,      // 2    0b000000001 hold; 0b10000001 tapped
-  DOUBLE_TD   = 2,      // 4    0b000000100 hold; 0b10000010 tapped
-  TRIPLE_TD   = 3,      // 8
-  QUADRU_TD   = 4,      // 16
-  FIVEFOLD_TD = 5,      // 32
-  SIXFOLD_TD  = 6,      // 64
+  SINGLE_TD   = 1,      //      0b000000001 hold; 0b10000001 tapped
+  DOUBLE_TD   = 2,      //      0b000000010 hold; 0b10000010 tapped
+  TRIPLE_TD   = 3,      //        000000011         10000011
+  QUADRU_TD   = 4,      //        000000100         10000100
+  FIVEFOLD_TD = 5,      //        000000101         10000101
+  SIXFOLD_TD  = 6,      //        000000110         10000110
   TAPPED_TD   = U32(7), // 128  0b000000000       0b10000000
 };
 uint32_t check_tap_state(qk_tap_dance_state_t *state);

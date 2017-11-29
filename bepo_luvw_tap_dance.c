@@ -27,7 +27,7 @@ void td_F1_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_DQOT); return; }
   if (state->count >= 2) { unregister_code(KC_F1); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F1
 
@@ -52,7 +52,7 @@ void td_F2_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_LGIL); return; }
   if (state->count >= 2) { unregister_code(KC_F2); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F2
 
@@ -77,7 +77,7 @@ void td_F3_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_RGIL); return; }
   if (state->count >= 2) { unregister_code(KC_F3); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F3
 
@@ -102,7 +102,7 @@ void td_F4_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_LPRN); return; }
   if (state->count >= 2) { unregister_code(KC_F4); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F4
 
@@ -127,7 +127,7 @@ void td_F5_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_RPRN); return; }
   if (state->count >= 2) { unregister_code(KC_F5); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F5
 
@@ -152,7 +152,7 @@ void td_F6_reset(qk_tap_dance_state_t *state, void *user_data)
   if (state->count <= 1) { unregister_code(BP_AT); return; }
   if (state->count >= 2) { unregister_code(KC_F6); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F6
 
@@ -174,10 +174,10 @@ void td_F7_finished(qk_tap_dance_state_t *state, void *user_data)
 }
 void td_F7_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { unregister_code(BP_PLUS); return; }
+  if (state->count <= 1) { unregister_code(BP_PLUS); return; }
   if (state->count >= 2) { unregister_code(KC_F7); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F7
 
@@ -195,14 +195,14 @@ void td_F8_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F8_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { register_code(BP_MINUS); }
+  if (state->count <= 1) { register_code(BP_MINUS); }
 }
 void td_F8_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { unregister_code(BP_MINUS); return; }
+  if (state->count <= 1) { unregister_code(BP_MINUS); return; }
   if (state->count >= 2) { unregister_code(KC_F8); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F8
 
@@ -220,14 +220,14 @@ void td_F9_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F9_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { register_code(BP_SLASH); }
+  if (state->count <= 1) { register_code(BP_SLASH); }
 }
 void td_F9_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { unregister_code(BP_SLASH); return; }
+  if (state->count <= 1) { unregister_code(BP_SLASH); return; }
   if (state->count >= 2) { unregister_code(KC_F9); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F9
 
@@ -249,10 +249,10 @@ void td_F10_finished(qk_tap_dance_state_t *state, void *user_data)
 }
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count <= 1)  { unregister_code(BP_ASTR); return; }
+  if (state->count <= 1) { unregister_code(BP_ASTR); return; }
   if (state->count >= 2) { unregister_code(KC_F10); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
-  if (state->count == 4) { unregister_code(KC_LCTRL); }
+  if (state->count >= 4) { unregister_code(KC_LCTRL); }
 }
 // end ALT+F10
 
@@ -264,19 +264,19 @@ void td_super_finished(qk_tap_dance_state_t *state, void *user_data)
   // single and double possible, so 4 possibilities
   switch (check_tap_state(state))
   {
-    case U32(SINGLE_TD): register_code(KC_RGUI); break;               // single hold
-    case (TAPPED_TD | U32(SINGLE_TD)): register_code(KC_LGUI); break; // single tap
-    case U32(DOUBLE_TD): register_code(KC_LALT | KC_LSHIFT); break;   // double hold
-    case (TAPPED_TD | U32(DOUBLE_TD)): layer_or(U32(FNCT)); break;    // double tap
+    case SINGLE_TD: register_code(KC_RGUI); break;               // single hold
+    case (TAPPED_TD | SINGLE_TD): register_code(KC_LGUI); break; // single tap
+    case DOUBLE_TD: register_code(KC_LALT | KC_LSHIFT); break;   // double hold
+    case (TAPPED_TD | DOUBLE_TD): layer_or(U32(FNCT)); break;    // double tap
   }
 }
 void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
   switch (check_tap_state(state))
   {
-    case U32(SINGLE_TD): unregister_code(KC_RGUI); break;
-    case (TAPPED_TD | U32(SINGLE_TD)): unregister_code(KC_LGUI); break;
-    case U32(DOUBLE_TD): unregister_code(KC_LALT | KC_LSHIFT); break;
-    case (TAPPED_TD | U32(DOUBLE_TD)): layer_xor(U32(FNCT)); break;
+    case SINGLE_TD: unregister_code(KC_RGUI); break;
+    case (TAPPED_TD | SINGLE_TD): unregister_code(KC_LGUI); break;
+    case DOUBLE_TD: unregister_code(KC_LALT | KC_LSHIFT); break;
+    case (TAPPED_TD | DOUBLE_TD): layer_xor(U32(FNCT)); break;
   }
 }
 
@@ -291,20 +291,20 @@ void td_allctrl_finished(qk_tap_dance_state_t *state, uint8_t _kc)
   // single and double possible, so 4 possibilities
   switch (check_tap_state(state))
   {
-    case U32(SINGLE_TD): register_code(_kc); break;                         // single hold
-    case (TAPPED_TD | U32(SINGLE_TD)): register_code(KC_ENTER); break;      // single tap
-    case U32(DOUBLE_TD): register_code(_kc) ; register_code(KC_LALT); break;// double hold
-    case (TAPPED_TD | U32(DOUBLE_TD)): register_code(KC_ENTER); break;      // double tap
+    case SINGLE_TD: register_code(_kc); break;                         // single hold
+    case (TAPPED_TD | SINGLE_TD): register_code(KC_ENTER); break;      // single tap
+    case DOUBLE_TD: register_code(_kc) ; register_code(KC_LALT); break;// double hold
+    case (TAPPED_TD | DOUBLE_TD): register_code(KC_ENTER); break;      // double tap
   }
 }
 void td_allctrl_reset(qk_tap_dance_state_t *state, uint8_t _kc)
 {
   switch (check_tap_state(state))
   {
-    case U32(SINGLE_TD): unregister_code(_kc); break;
-    case (TAPPED_TD | U32(SINGLE_TD)): unregister_code(KC_ENTER); break;
-    case U32(DOUBLE_TD): unregister_code(_kc) ; unregister_code(KC_LALT); break;
-    case (TAPPED_TD | U32(DOUBLE_TD)): register_code(KC_ENTER); break;
+    case SINGLE_TD: unregister_code(_kc); break;
+    case (TAPPED_TD | SINGLE_TD): unregister_code(KC_ENTER); break;
+    case DOUBLE_TD: unregister_code(_kc) ; unregister_code(KC_LALT); break;
+    case (TAPPED_TD | DOUBLE_TD): register_code(KC_ENTER); break;
   }
 }
 void td_lctrl_finished(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_finished(state, KC_LCTRL); }
@@ -317,7 +317,7 @@ void td_rctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_r
 
 uint32_t check_tap_state(qk_tap_dance_state_t *state)
 {
-  uint32_t _tap_dance_state = U32(state->count);
+  uint32_t _tap_dance_state = state->count;
   if (state->interrupted || state->pressed == 0) return _tap_dance_state;
   else if (state->pressed) return (TAPPED_TD | _tap_dance_state);
   return UNKNOWN_TD;
