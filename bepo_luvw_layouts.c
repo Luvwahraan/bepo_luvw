@@ -37,7 +37,7 @@ _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC
 _______,     _______,     _______,     _______,     _______,
                                                                               LCLAHM,      TD_GUI,
                                                                                            LCTLENT,
-                                                                 FN_SPC,      TD_LCAPS,    LALTENT,
+                                                                 FN_SPC,      TD_LCAPS,    TD_LCTRL,
 
                           _______,     _______,     _______,     _______,     _______,     _______,     _______, // right hand
                           KC_LEAD,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
@@ -46,7 +46,7 @@ _______,     _______,     _______,     _______,     _______,
                                                     _______,     _______,     _______,     _______,     _______,
 TD_GUI,     LCLAHM,
 RCTLENT,
-RALTENT,     TD_RCAPS,    FN_SPC),
+TD_RCTRL,   TD_RCAPS,    FN_SPC),
 
 /* keymap 0: default layer
  *
