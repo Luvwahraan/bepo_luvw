@@ -29,7 +29,6 @@ enum
 // Tap dance keys
 #define TD_COPY   TD(TCOPY)
 #define TD_PASTE  TD(TPASTE)
-#define TD_RAND   TD(TRAND)
 #define TD_LCAPS  TD(TLCAPS)
 #define TD_RCAPS  TD(TRCAPS)
 #define TD_F1     TD(TRF1)
@@ -94,13 +93,6 @@ void td_rctrl_reset(qk_tap_dance_state_t *, void *);
 void td_super_finished(qk_tap_dance_state_t *state, void *user_data);
 void td_super_reset(qk_tap_dance_state_t *state, void *user_data);
 // end Super/GUI
-
-
-// password generator
-void td_rand_finished(qk_tap_dance_state_t *state, void *user_data);
-void td_rand_reset(qk_tap_dance_state_t *state, void *user_data);
-void td_rand_each(qk_tap_dance_state_t *state, void *user_data);
-// end password generator
 
 
 // ALT+F1

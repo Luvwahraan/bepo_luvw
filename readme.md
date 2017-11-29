@@ -47,8 +47,6 @@ Cette fonctionnalité permet de gérer finement les répétitions de touches.
 
 La touche verr.maj n’étant pas placé, elle est accessibles grace la fonctionnalité Tap Dance, en pressant deux fois une des touches *SHIFT*.
 
-En pressant plusieurs fois la touche `P`, on peut générer des caractères aléatoires.
-
 Les raccourcis de `F1` à `F10` sont accessibles en tapant plusieurs fois les touches `"` à `)` sur la première ligne. Par exemple `(`→`(`→`(` ferme la fenêtre en cours, en envoyant la séquence `ALT+F4`.
 
 Certains modificateurs s’utilisent également en les tapants plusieurs fois.
@@ -123,7 +121,6 @@ Touche    | tap1     | tap2     | tap3       | tap4           | tap5
 ----------|----------|----------|------------|----------------|-------
  `LSHIFT` | `LSHIFT` | `LSHIFT` | `CAPSLOCK` |                |
  `RSHIFT` | `RSHIFT` | `RSHIFT` | `CAPSLOCK` |                |
- `P`      | `P`      |5x random | 8x random  | 12x random     | 15x random
  `"`      | `"`      | `F1`     | `ALT+F1`   | `CTRL+ALT+F1`  |
  `«`      | `«`      | `F2`     | `ALT+F2`   | `CTRL+ALT+F2`  |
  `»`      | `»`      | `F3`     | `ALT+F3`   | `CTRL+ALT+F3`  |

@@ -69,7 +69,7 @@ RALTENT,     TD_RCAPS,    FN_SPC),
 [BEPO] = LAYOUT_ergodox(
 //BP_DOLLAR,BP_DQOT,      BP_LGIL,     BP_RGIL,     BP_LPRN,     BP_RPRN,     KC_BSPC,        // left hand
 BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_BSPC,
-KC_TAB,      BP_B,        BP_ECUT,     TD_RAND,     BP_O,        BP_EGRV,     _______,
+KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     _______,
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
 BP_ECRC,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     L_D,
@@ -106,7 +106,7 @@ _______,     _______,     _______),
  */
 [AZER] = LAYOUT_ergodox(
 FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_BSPC,                       // Left hand
-KC_TAB,      KC_B,        FR_EACU,     TD_RAND,     KC_O,        FR_EGRV,     _______,
+KC_TAB,      KC_B,        FR_EACU,     BP_P,        KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
 KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
 TD_COPY,     TD_PASTE,    FR_PERC,     KC_PGUP,     L_D,
@@ -188,7 +188,7 @@ _______,     _______,     _______,     _______,     _______,                    
                                                                               _______,     _______,     _______,    ////
 
                           KC_BSPC,     TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
-                          KC_LEAD,     BP_EGRV,     BP_O,        TD_RAND,     BP_ECUT,     BP_B,        KC_TAB,     //
+                          KC_LEAD,     BP_EGRV,     BP_O,        BP_P,        BP_ECUT,     BP_B,        KC_TAB,     //
                                        BP_COMMA,    BP_E,        BP_I,        BP_U,        BP_A,        BP_W,       //
                           KC_LEAD,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     BP_ECRC,    //
                                                     _______,     _______,     BP_PERC,     _______,     _______,    //

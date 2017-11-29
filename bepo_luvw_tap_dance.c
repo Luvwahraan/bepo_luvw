@@ -6,48 +6,6 @@
 #include "bepo_luvw_shortcuts.h"
 #include "bepo_luvw_tap_dance.h"
 
-// Password generator
-void td_rand_finished(qk_tap_dance_state_t *state, void *user_data)
-{
-  if (state->count < 1) {
-    register_code(BP_P);
-  }
-}
-void td_rand_reset(qk_tap_dance_state_t *state, void *user_data)
-{
-  if (state->count < 1) {
-    unregister_code(BP_P);
-  }
-}
-void td_rand_each(qk_tap_dance_state_t *state, void *user_data)
-{
-  switch (state->count)
-  {
-    case 1:
-      for (uint8_t i=0; i>=5; i++) {
-        tap_random_base64();
-      }
-      break;
-    case 2:
-      for (uint8_t i=0; i>=3; i++) {
-        tap_random_base64();
-      }
-      break;
-    case 3:
-      for (uint8_t i=0; i>=4; i++) {
-        tap_random_base64();
-      }
-      break;
-    case 4:
-      for (uint8_t i=0; i>=3; i++) {
-        tap_random_base64();
-        reset_tap_dance(state);
-      }
-      break;
-  }
-}
-// end password generator
-
 
 // ALT+F1
 void td_F1_each(qk_tap_dance_state_t *state, void *user_data)
@@ -62,11 +20,11 @@ void td_F1_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F1_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_DQOT); }
+  if (state->count <= 1) { register_code(BP_DQOT); }
 }
 void td_F1_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_DQOT); return; }
+  if (state->count <= 1) { unregister_code(BP_DQOT); return; }
   if (state->count >= 2) { unregister_code(KC_F1); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -87,11 +45,11 @@ void td_F2_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F2_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_LGIL); }
+  if (state->count <= 1) { register_code(BP_LGIL); }
 }
 void td_F2_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_LGIL); return; }
+  if (state->count <= 1) { unregister_code(BP_LGIL); return; }
   if (state->count >= 2) { unregister_code(KC_F2); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -112,11 +70,11 @@ void td_F3_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F3_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_RGIL); }
+  if (state->count <= 1) { register_code(BP_RGIL); }
 }
 void td_F3_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_RGIL); return; }
+  if (state->count <= 1) { unregister_code(BP_RGIL); return; }
   if (state->count >= 2) { unregister_code(KC_F3); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -137,11 +95,11 @@ void td_F4_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F4_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_LPRN); }
+  if (state->count <= 1) { register_code(BP_LPRN); }
 }
 void td_F4_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_LPRN); return; }
+  if (state->count <= 1) { unregister_code(BP_LPRN); return; }
   if (state->count >= 2) { unregister_code(KC_F4); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -162,11 +120,11 @@ void td_F5_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F5_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_RPRN); }
+  if (state->count <= 1) { register_code(BP_RPRN); }
 }
 void td_F5_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_RPRN); return; }
+  if (state->count <= 1) { unregister_code(BP_RPRN); return; }
   if (state->count >= 2) { unregister_code(KC_F5); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -187,11 +145,11 @@ void td_F6_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F6_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { register_code(BP_AT); }
+  if (state->count <= 1)  { register_code(BP_AT); }
 }
 void td_F6_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { unregister_code(BP_AT); return; }
+  if (state->count <= 1) { unregister_code(BP_AT); return; }
   if (state->count >= 2) { unregister_code(KC_F6); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -212,11 +170,11 @@ void td_F7_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F7_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { register_code(BP_PLUS); }
+  if (state->count <= 1)  { register_code(BP_PLUS); }
 }
 void td_F7_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { unregister_code(BP_PLUS); return; }
+  if (state->count <= 1)  { unregister_code(BP_PLUS); return; }
   if (state->count >= 2) { unregister_code(KC_F7); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -237,11 +195,11 @@ void td_F8_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F8_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { register_code(BP_MINUS); }
+  if (state->count <= 1)  { register_code(BP_MINUS); }
 }
 void td_F8_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { unregister_code(BP_MINUS); return; }
+  if (state->count <= 1)  { unregister_code(BP_MINUS); return; }
   if (state->count >= 2) { unregister_code(KC_F8); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -262,11 +220,11 @@ void td_F9_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F9_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { register_code(BP_SLASH); }
+  if (state->count <= 1)  { register_code(BP_SLASH); }
 }
 void td_F9_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { unregister_code(BP_SLASH); return; }
+  if (state->count <= 1)  { unregister_code(BP_SLASH); return; }
   if (state->count >= 2) { unregister_code(KC_F9); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -287,11 +245,11 @@ void td_F10_each(qk_tap_dance_state_t *state, void *user_data)
 
 void td_F10_finished(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1) { register_code(BP_ASTR); }
+  if (state->count <= 1) { register_code(BP_ASTR); }
 }
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  if (state->count < 1)  { unregister_code(BP_ASTR); return; }
+  if (state->count <= 1)  { unregister_code(BP_ASTR); return; }
   if (state->count >= 2) { unregister_code(KC_F10); }
   if (state->count >= 3) { unregister_code(KC_LALT); }
   if (state->count == 4) { unregister_code(KC_LCTRL); }
@@ -376,8 +334,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [TCOPY]   = ACTION_TAP_DANCE_DOUBLE(KC_LEFT, KC_COPY),
   [TPASTE]  = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PASTE),
-
-  [TRAND]   = ACTION_TAP_DANCE_FN_ADVANCED(td_rand_each,  td_rand_finished,   td_rand_reset),
 
   [TRF1]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F1_each, td_F1_finished,  td_F1_reset),
   [TRF2]    = ACTION_TAP_DANCE_FN_ADVANCED(td_F2_each, td_F2_finished,  td_F2_reset),
