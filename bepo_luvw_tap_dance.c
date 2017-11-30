@@ -284,27 +284,53 @@ void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
  * nb Hold          | Tap
  * ----------------------------
  * 1  L/RCTRL         | ENTER
- * 2  L/RCTRL + LALT  | ENTER
+ * 2  LALT            | ENTER
+ * 3  L/RCTRL + LALT  | ENTER
  */
 void td_allctrl_finished(qk_tap_dance_state_t *state, uint8_t _kc)
 {
-  // single and double possible, so 4 possibilities
   switch (check_tap_state(state))
   {
-    case SINGLE_TD: register_code(_kc); break;                         // single hold
-    case (TAPPED_TD | SINGLE_TD): register_code(KC_ENTER); break;      // single tap
-    case DOUBLE_TD: register_code(_kc) ; register_code(KC_LALT); break;// double hold
-    case (TAPPED_TD | DOUBLE_TD): register_code(KC_ENTER); break;      // double tap
+    case (TRIPLE_TD|TAPPED_TD):   // triple tap
+      register_code(KC_ENTER);
+    case (TAPPED_TD | DOUBLE_TD): // double tap
+      register_code(KC_ENTER);
+    case (TAPPED_TD | SINGLE_TD): // single tap
+      register_code(KC_ENTER);
+      break;
+    case SINGLE_TD:               // single hold
+      register_code(_kc);
+      break;
+    case DOUBLE_TD:               // double hold
+      register_code(KC_LALT);
+      break;
+    case TRIPLE_TD:
+      register_code(_kc);
+      register_code(KC_LALT);
+      break;
   }
 }
 void td_allctrl_reset(qk_tap_dance_state_t *state, uint8_t _kc)
 {
   switch (check_tap_state(state))
   {
-    case SINGLE_TD: unregister_code(_kc); break;
-    case (TAPPED_TD | SINGLE_TD): unregister_code(KC_ENTER); break;
-    case DOUBLE_TD: unregister_code(_kc) ; unregister_code(KC_LALT); break;
-    case (TAPPED_TD | DOUBLE_TD): register_code(KC_ENTER); break;
+    case (TRIPLE_TD|TAPPED_TD):   // triple tap
+      unregister_code(KC_ENTER);
+    case (TAPPED_TD | DOUBLE_TD): // double tap
+      unregister_code(KC_ENTER);
+    case (TAPPED_TD | SINGLE_TD): // single tap
+      unregister_code(KC_ENTER);
+      break;
+    case SINGLE_TD:               // single hold
+      unregister_code(_kc);
+      break;
+    case DOUBLE_TD:               // double hold
+      unregister_code(KC_LALT);
+      break;
+    case TRIPLE_TD:
+      unregister_code(_kc);
+      unregister_code(KC_LALT);
+      break;
   }
 }
 void td_lctrl_finished(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_finished(state, KC_LCTRL); }
