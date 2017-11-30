@@ -51,7 +51,7 @@ TD_RCTRL,   TD_RCAPS,    FN_SPC),
 /* keymap 0: default layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
- * |   $    |   "  |   «  |   »  |   (  |   )  | BKSP |                                  |Delete|   @  |   +  |   -  |   /  |   *  |   =    |
+ * |   $    |   "  |   «  |   »  |   (  |   )  |Delete|                                  |Delete|   @  |   +  |   -  |   /  |   *  |   =    |
  * |--------+------+------+------+------+-------------|                                  |------+------+------+------+------+------+--------|
  * |   tab  |   b  |e_acut|   p  |   o  |e_grav| LEAD |                                  | LEAD |   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
@@ -68,7 +68,7 @@ TD_RCTRL,   TD_RCAPS,    FN_SPC),
  */
 [BEPO] = LAYOUT_ergodox(
 //BP_DOLLAR,BP_DQOT,      BP_LGIL,     BP_RGIL,     BP_LPRN,     BP_RPRN,     KC_BSPC,        // left hand
-BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_BSPC,
+BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_DEL,
 KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     _______,
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
 BP_ECRC,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
@@ -89,7 +89,7 @@ _______,     _______,     _______),
 /* Keymap 1: bepo to azerty base compat layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
- * |   $    |   "  |   <  |   >  |   (  |   )  | BKSP |                                  |Delete|   @  |   +  |   -  |   /  |   *  |   =    |
+ * |   $    |   "  |   <  |   >  |   (  |   )  |Delete|                                  |Delete|   @  |   +  |   -  |   /  |   *  |   =    |
  * |--------+------+------+------+------+-------------|                                  |------+------+------+------+------+------+--------|
  * |   tab  |   b  |e_acut|   p  |   o  |e_grav| LEAD |                                  | LEAD |   ^  |   v  |   d  |   l  |   j  |   z    |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
@@ -105,7 +105,7 @@ _______,     _______,     _______),
  *                                             `--------------------'      `--------------------'
  */
 [AZER] = LAYOUT_ergodox(
-FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_BSPC,                       // Left hand
+FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_DEL,                        // Left hand
 KC_TAB,      KC_B,        FR_EACU,     BP_P,        KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
 KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
@@ -162,7 +162,7 @@ _______,     MO(QW_S),    _______),
 /* keymap: BÉPO mirror
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
- * |   =    |   *  |   /  |   -  |   +  |   @  |Delete|                                  | BKSP |   )  |   (  |   »  |   «  |   "  |   $    |
+ * |   =    |   *  |   /  |   -  |   +  |   @  |Delete|                                  |Delete|   )  |   (  |   »  |   «  |   "  |   $    |
  * |--------+------+------+------+------+-------------|                                  |------+------+------+------+------+------+--------|
  * |   z    |   j  |   d  |   d  |   v  |   ^  | LEAD |                                  | LEAD |   è  |   o  |   p  |   é  |   b  |  tab   |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
@@ -187,7 +187,7 @@ _______,     _______,     _______,     _______,     _______,                    
                                                                                                         _______,    //
                                                                               _______,     _______,     _______,    ////
 
-                          KC_BSPC,     TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
+                          KC_DEL,      TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
                           KC_LEAD,     BP_EGRV,     BP_O,        BP_P,        BP_ECUT,     BP_B,        KC_TAB,     //
                                        BP_COMMA,    BP_E,        BP_I,        BP_U,        BP_A,        BP_W,       //
                           KC_BSPC,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     BP_ECRC,    //
