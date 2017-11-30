@@ -77,7 +77,6 @@ void td_lalt_finished(qk_tap_dance_state_t *state, void *user_data)
 }
 void td_lalt_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  tdState = check_tap_state(state);
   switch (tdState)
   {
     case SINGLE_HOLD_TD: unregister_code(KC_RALT); break;
@@ -94,25 +93,21 @@ void td_ralt_finished(qk_tap_dance_state_t *state, void *user_data)
   {
     case SINGLE_HOLD_TD: register_code(KC_RALT); break;
     case SINGLE_TAP_TD: register_code(KC_LALT); break;
-    case DOUBLE_TAP_TD: register_code(KC_HOME); break;
+    case DOUBLE_TAP_TD: register_code(KC_END); break;
     default: register_code(KC_RALT); break;
   }
 }
 void td_ralt_reset(qk_tap_dance_state_t *state, void *user_data)
 {
-  tdState = check_tap_state(state);
   switch (tdState)
   {
     case SINGLE_HOLD_TD: unregister_code(KC_RALT); break;
     case SINGLE_TAP_TD: unregister_code(KC_LALT); break;
-    case DOUBLE_TAP_TD: unregister_code(KC_HOME); break;
+    case DOUBLE_TAP_TD: unregister_code(KC_END); break;
     default: unregister_code(KC_RALT); break;
   }
   tdState = 0;
 }
-
-
-
 // end alt
 
 
