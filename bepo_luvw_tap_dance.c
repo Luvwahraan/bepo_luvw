@@ -211,12 +211,54 @@ uint8_t check_tap_state(qk_tap_dance_state_t *_state)
   return danceState;
 }
 
-void td_Mall_finished()
+void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)
 {
+  tdState = check_tap_state(_state);
+  switch (tdState)
+  {
+    case SINGLE_TAP_TD:
+      register_code(KC_ENTER);
+      break;
+    case SINGLE_HOLD_TD:
+      register_code(_kc);
+      break;
+    case DOUBLE_TAP_TD:
+    case DOUBLE_SINGLE_TAP_TD:
+      register_code(KC_ENTER); unregister_code(KC_ENTER); register_code(KC_ENTER);
+      break;
+    case DOUBLE_HOLD_TD:
+      register_code(KC_RALT);
+      break;
+    case UNKNOWN_TD:
+    default:
+      register_code(KC_ENTER);
+      break;
+  }
 }
 
-void td_Mall_reset()
+void td_Mall_reset(qk_tap_dance_state_t *_state, uint8_t _kc)
 {
+  switch (tdState)
+  {
+    case SINGLE_TAP_TD:
+      unregister_code(KC_ENTER);
+      break;
+    case SINGLE_HOLD_TD:
+      unregister_code(_kc);
+      break;
+    case DOUBLE_TAP_TD:
+    case DOUBLE_SINGLE_TAP_TD:
+      unregister_code(KC_ENTER);
+      break;
+    case DOUBLE_HOLD_TD:
+      unregister_code(KC_RALT);
+      break;
+    case UNKNOWN_TD:
+    default:
+      unregister_code(KC_ENTER);
+      break;
+  }
+  tdState = 0;
 }
 
 void td_LM_finished(qk_tap_dance_state_t *state, void *user_data) { td_Mall_finished(state, KC_LSHIFT); }
@@ -234,8 +276,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TLCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS),
   [TRCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_RSHIFT, KC_CAPS),
 
-  [TDSHIFTENTERL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LM_finished, td_LM_reset);
-  [TDSHIFTENTERR] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RM_finished, td_RM_reset);
+  [TDSHIFTENTERL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LM_finished, td_LM_reset),
+  [TDSHIFTENTERR] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RM_finished, td_RM_reset),
 
   [TCOPY]   = ACTION_TAP_DANCE_DOUBLE(KC_LEFT, KC_COPY),
   [TPASTE]  = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PASTE),

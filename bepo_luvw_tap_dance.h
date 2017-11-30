@@ -31,8 +31,8 @@ enum
 // Tap dance keys
 #define TD_COPY   TD(TCOPY)
 #define TD_PASTE  TD(TPASTE)
-#define TD_LMAJ   TD(SHIFTENTERL)
-#define TD_RMAJ   TD(SHIFTENTERR)
+#define TD_LMAJ   TD(TDSHIFTENTERL)
+#define TD_RMAJ   TD(TDSHIFTENTERR)
 #define TD_LCAPS  TD(TLCAPS)
 #define TD_RCAPS  TD(TRCAPS)
 #define TD_F1     TD(TRF1)
