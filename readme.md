@@ -102,12 +102,11 @@ Pressée         | Tapée
 
  Touche 1 | touche 2 | touche 3 | touche 4 |Fonctionnalité
 ----------|----------|----------|----------|---------------
-`$` | | | | Escape key
-`N` | | | | Couche pavé numérique (**NUMK**).
-`Space` | `Space` | | | FN lock
-`L` | `O` | `L` | | Keyboard lock/unlock
-`P` | `O` | `W` | `A` | Sys power
-`Tab` ou `Z` | `LEAD` | | | Toggle BÉPO mirroir
+`$`       |          |          |          | Escape key
+`N`       |          |          |          | Couche pavé numérique (**NUMK**).
+`L`       | `O`      | `L`      |          | Keyboard lock/unlock
+`P`       | `O`      | `W`      | `A`      | Sys power
+`Tab` ou `Z` | `LEAD` |         |          | Toggle BÉPO mirroir
 
 ### Tap dance
 
@@ -137,6 +136,14 @@ nb tap | Tenue          | Relachées
 -------|----------------|---------------
  1     | KC_LGUI        | KC_RGUI
  2     | Affichage FNCT | LALT + LSHIFT
+
+
+##### Shift L&R
+
+nb tap | Tenue          | Relachées
+-------|----------------|---------------
+1      | shift          | enter
+2      | altgr          | enter
 
 
 

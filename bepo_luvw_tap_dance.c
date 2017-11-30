@@ -63,6 +63,59 @@ void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_res
 // end F
 
 
+// Alt
+void td_lalt_finished(qk_tap_dance_state_t *state, void *user_data)
+{
+  tdState = check_tap_state(state);
+  switch (tdState)
+  {
+    case SINGLE_HOLD_TD: register_code(KC_RALT); break;
+    case SINGLE_TAP_TD: register_code(KC_LALT); break;
+    case DOUBLE_TAP_TD: register_code(KC_HOME); break;
+    default: register_code(KC_RALT); break;
+  }
+}
+void td_lalt_reset(qk_tap_dance_state_t *state, void *user_data)
+{
+  tdState = check_tap_state(state);
+  switch (tdState)
+  {
+    case SINGLE_HOLD_TD: unregister_code(KC_RALT); break;
+    case SINGLE_TAP_TD: unregister_code(KC_LALT); break;
+    case DOUBLE_TAP_TD: unregister_code(KC_HOME); break;
+    default: unregister_code(KC_RALT); break;
+  }
+  tdState = 0;
+}
+void td_ralt_finished(qk_tap_dance_state_t *state, void *user_data)
+{
+  tdState = check_tap_state(state);
+  switch (tdState)
+  {
+    case SINGLE_HOLD_TD: register_code(KC_RALT); break;
+    case SINGLE_TAP_TD: register_code(KC_LALT); break;
+    case DOUBLE_TAP_TD: register_code(KC_HOME); break;
+    default: register_code(KC_RALT); break;
+  }
+}
+void td_ralt_reset(qk_tap_dance_state_t *state, void *user_data)
+{
+  tdState = check_tap_state(state);
+  switch (tdState)
+  {
+    case SINGLE_HOLD_TD: unregister_code(KC_RALT); break;
+    case SINGLE_TAP_TD: unregister_code(KC_LALT); break;
+    case DOUBLE_TAP_TD: unregister_code(KC_HOME); break;
+    default: unregister_code(KC_RALT); break;
+  }
+  tdState = 0;
+}
+
+
+
+// end alt
+
+
 
 // Super/GUI keys
 void td_super_finished(qk_tap_dance_state_t *state, void *user_data)
@@ -273,6 +326,9 @@ uint8_t check_tap_state(qk_tap_dance_state_t *_state)
 
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TDGUI]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_super_finished, td_super_reset),
+
+  [TDLALT]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lalt_finished, td_lalt_reset),
+  [TDRALT]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_ralt_finished, td_ralt_reset),
 
   [TDLCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lctrl_finished, td_lctrl_reset),
   [TDRCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_rctrl_finished, td_rctrl_reset),

@@ -35,8 +35,8 @@ _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_BSPC,
 _______,     _______,     _______,     _______,     _______,
-                                                                              LCLAHM,      TD_GUI,
-                                                                                           LCTLENT,
+                                                                              TD_LALT,    TD_GUI,
+                                                                                          LCTLENT,
                                                                  FN_SPC,      TD_LMAJ,    TD_LCTRL,
 
                           _______,     _______,     _______,     _______,     _______,     _______,     _______, // right hand
@@ -44,7 +44,7 @@ _______,     _______,     _______,     _______,     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                           KC_BSPC,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                                     _______,     _______,     _______,     _______,     _______,
-TD_GUI,     LCLAHM,
+TD_GUI,     TD_RALT,
 RCTLENT,
 TD_RCTRL,   TD_RMAJ,    FN_SPC),
 

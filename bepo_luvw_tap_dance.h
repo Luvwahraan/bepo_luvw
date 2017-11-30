@@ -26,6 +26,8 @@ enum
   TDLCTRL,
   TDRCTRL,
   SPCFN,
+  TDLALT,
+  TDRALT,
 };
 
 // Tap dance keys
@@ -47,6 +49,8 @@ enum
 #define TD_LCTRL  TD(TDLCTRL)
 #define TD_RCTRL  TD(TDRCTRL)
 #define TD_SPCFN  TD(SPCFN)
+#define TD_RALT   TD(TDRALT)
+#define TD_LALT   TD(TDLALT)
 
 
 /* Easy Tap Dance states
