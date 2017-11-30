@@ -70,23 +70,4 @@
 #define QPN___  ( QWERAK    | U32(PLAY) | U32(NUMK) )
 
 
-// Keys
-#define XXXXXXX     KC_NO
-
-#define LSRA        (QK_LSFT | QK_RALT)
-#define LCLA        (QK_LCTL | QK_LALT)
-
-// Keys layers
-#define FN_SPC      LT(FNCT,KC_SPC)
-
-// Keys mod tap
-#define LCLAHM      MT(LCLA,KC_HOME)
-#define PLYLGUI     MT(KC_MPLY,KC_LGUI)
-#define LCTLENT     MT(KC_LCTL,KC_ENTER)
-#define LALTENT     MT(KC_LALT,KC_ENTER)
-#define RCTLENT     MT(KC_RCTL,KC_ENTER)
-#define RALTENT     MT(BP_ALGR,KC_ENTER)
-#define AZERALT     MT(MO(AZ_A),KC_ENTER)
-#define LALTSH      MT(LSRA,KC_END)
-
 #endif
