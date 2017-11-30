@@ -89,12 +89,4 @@
 #define AZERALT     MT(MO(AZ_A),KC_ENTER)
 #define LALTSH      MT(LSRA,KC_END)
 
-// Keys shortcuts
-#define KC_COPY     LCTL(BP_C)
-#define KC_PASTE    LCTL(BP_V)
-#define L_D         LCA(KC_LEFT)  // X.org working spaces nav
-#define R_D         LCA(KC_RIGHT) //
-#define U_D         LCA(KC_UP)    //
-#define D_D         LCA(KC_DOWN)  ////
-
 #endif
