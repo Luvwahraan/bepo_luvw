@@ -106,7 +106,7 @@ _______,     _______,     _______),
  */
 [AZER] = LAYOUT_ergodox(
 FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_DEL,                        // Left hand
-KC_TAB,      KC_B,        FR_EACU,     BP_P,        KC_O,        FR_EGRV,     _______,
+KC_TAB,      KC_B,        FR_EACU,     KC_P,        KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
 KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
 TD_COPY,     TD_PASTE,    FR_PERC,     KC_PGUP,     LWS,
