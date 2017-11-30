@@ -23,11 +23,11 @@ void td_Fall_reset(qk_tap_dance_state_t *state, const uint8_t _kc, const uint8_t
 {
   switch (state->count)
   {
-    case 1: register_code(_kc); break;
-    case 2: register_code(_kcF); break;
-    case 3: register_code(KC_LALT); register_code(_kcF); break;
-    case 4: register_code(KC_LCTRL); register_code(_kcF); break;
-    default: register_code(_kc); break;
+    case 1: unregister_code(_kc); break;
+    case 2: unregister_code(_kcF); break;
+    case 3: unregister_code(KC_LALT); unregister_code(_kcF); break;
+    case 4: unregister_code(KC_LCTRL); unregister_code(_kcF); break;
+    default: unregister_code(_kc); break;
   }
 }
 void td_F9_finished(qk_tap_dance_state_t *state, void *user_data) { td_Fall_finished(state, BP_SLASH, KC_F9); }
