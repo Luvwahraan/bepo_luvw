@@ -137,16 +137,16 @@ Touche    | tap1     | tap2     | tap3       | tap4           | tap5
 ##### L et R Super/GUI avec les mêmes actions.
 
 nb tap | Tenue          | Relachées
-----------------------------------------
+-------|----------------|---------------
  1     | KC_LGUI        | KC_RGUI
  2     | Affichage FNCT | LALT + LSHIFT
 
 ##### LCTRL et RCTRL
 
- nb tap | Hold           | Tap
- --------------------------------
- 1      | L/RCTRL        | ENTER
- 2      | L/RCTRL + LALT | ENTER
+nb tap | Tenue          | Relachées
+-------|----------------|---------------
+ 1     | L/RCTRL        | ENTER
+ 2     | L/RCTRL + LALT | ENTER
 
 
 
