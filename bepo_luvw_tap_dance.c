@@ -171,46 +171,7 @@ void td_SPC_reset(qk_tap_dance_state_t *state, void *user_data)
 // end space/fn
 
 
-uint8_t check_tap_state(qk_tap_dance_state_t *_state)
-{
-  uint8_t danceState = UNKNOWN_TD;
-
-  switch (_state->count)
-  {
-    case 1:
-      if (_state->interrupted || _state->pressed==0) danceState = SINGLE_TAP_TD;
-      else danceState = SINGLE_HOLD_TD;
-      break;
-    case 2:
-      if (_state->interrupted) danceState = DOUBLE_SINGLE_TAP_TD;
-      else if (_state->pressed) danceState = DOUBLE_HOLD_TD;
-      else danceState = DOUBLE_TAP_TD;
-      break;
-    case 3:
-      if (_state->interrupted) danceState = TRIPLE_SINGLE_TAP_TD;
-      else if (_state->pressed) danceState = TRIPLE_HOLD_TD;
-      else danceState = TRIPLE_TAP_TD;
-      break;
-    case 4:
-      if (_state->interrupted) danceState = QUADRU_SINGLE_TAP_TD;
-      else if (_state->pressed) danceState = QUADRU_HOLD_TD;
-      else danceState = QUADRU_TAP_TD;
-      break;
-    case 5:
-      if (_state->interrupted) danceState = FIVEFOLD_SINGLE_TAP_TD;
-      else if (_state->pressed) danceState = FIVEFOLD_HOLD_TD;
-      else danceState = FIVEFOLD_TAP_TD;
-      break;
-    case 6:
-      if (_state->interrupted) danceState = SIXFOLD_SINGLE_TAP_TD;
-      else if (_state->pressed) danceState = SIXFOLD_HOLD_TD;
-      else danceState = SIXFOLD_TAP_TD;
-      break;
-  }
-
-  return danceState;
-}
-
+// Maj
 void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)
 {
   tdState = check_tap_state(_state);
@@ -265,6 +226,49 @@ void td_LM_finished(qk_tap_dance_state_t *state, void *user_data) { td_Mall_fini
 void td_RM_finished(qk_tap_dance_state_t *state, void *user_data) { td_Mall_finished(state, KC_RSHIFT); }
 void td_LM_reset(qk_tap_dance_state_t *state, void *user_data) { td_Mall_reset(state, KC_LSHIFT); }
 void td_RM_reset(qk_tap_dance_state_t *state, void *user_data) { td_Mall_reset(state, KC_RSHIFT); }
+// end maj
+
+
+uint8_t check_tap_state(qk_tap_dance_state_t *_state)
+{
+  uint8_t danceState = UNKNOWN_TD;
+
+  switch (_state->count)
+  {
+    case 1:
+      if (_state->interrupted || _state->pressed==0) danceState = SINGLE_TAP_TD;
+      else danceState = SINGLE_HOLD_TD;
+      break;
+    case 2:
+      if (_state->interrupted) danceState = DOUBLE_SINGLE_TAP_TD;
+      else if (_state->pressed) danceState = DOUBLE_HOLD_TD;
+      else danceState = DOUBLE_TAP_TD;
+      break;
+    case 3:
+      if (_state->interrupted) danceState = TRIPLE_SINGLE_TAP_TD;
+      else if (_state->pressed) danceState = TRIPLE_HOLD_TD;
+      else danceState = TRIPLE_TAP_TD;
+      break;
+    case 4:
+      if (_state->interrupted) danceState = QUADRU_SINGLE_TAP_TD;
+      else if (_state->pressed) danceState = QUADRU_HOLD_TD;
+      else danceState = QUADRU_TAP_TD;
+      break;
+    case 5:
+      if (_state->interrupted) danceState = FIVEFOLD_SINGLE_TAP_TD;
+      else if (_state->pressed) danceState = FIVEFOLD_HOLD_TD;
+      else danceState = FIVEFOLD_TAP_TD;
+      break;
+    case 6:
+      if (_state->interrupted) danceState = SIXFOLD_SINGLE_TAP_TD;
+      else if (_state->pressed) danceState = SIXFOLD_HOLD_TD;
+      else danceState = SIXFOLD_TAP_TD;
+      break;
+  }
+
+  return danceState;
+}
+
 
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -272,9 +276,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [TDLCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lctrl_finished, td_lctrl_reset),
   [TDRCTRL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_rctrl_finished, td_rctrl_reset),
-
-  [TLCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPS),
-  [TRCAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_RSHIFT, KC_CAPS),
 
   [TDSHIFTENTERL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LM_finished, td_LM_reset),
   [TDSHIFTENTERR] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RM_finished, td_RM_reset),

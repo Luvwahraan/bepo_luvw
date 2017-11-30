@@ -33,8 +33,6 @@ enum
 #define TD_PASTE  TD(TPASTE)
 #define TD_LMAJ   TD(TDSHIFTENTERL)
 #define TD_RMAJ   TD(TDSHIFTENTERR)
-#define TD_LCAPS  TD(TLCAPS)
-#define TD_RCAPS  TD(TRCAPS)
 #define TD_F1     TD(TRF1)
 #define TD_F2     TD(TRF2)
 #define TD_F3     TD(TRF3)
