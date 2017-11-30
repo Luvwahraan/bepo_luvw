@@ -8,7 +8,8 @@ enum
 {
   TCOPY = 0,
   TPASTE,
-  TRAND,
+  TDSHIFTENTERL,
+  TDSHIFTENTERR,
   TLCAPS,
   TRCAPS,
   TRF1,
@@ -30,6 +31,8 @@ enum
 // Tap dance keys
 #define TD_COPY   TD(TCOPY)
 #define TD_PASTE  TD(TPASTE)
+#define TD_LMAJ   TD(SHIFTENTERL)
+#define TD_RMAJ   TD(SHIFTENTERR)
 #define TD_LCAPS  TD(TLCAPS)
 #define TD_RCAPS  TD(TRCAPS)
 #define TD_F1     TD(TRF1)
@@ -57,16 +60,27 @@ enum
  */
 enum
 {
-  UNKNOWN_TD  = 0,
-  SINGLE_TD   = 1,
-  DOUBLE_TD   = 2,
-  TRIPLE_TD   = 3,
-  QUADRU_TD   = 4,
-  FIVEFOLD_TD = 5,
-  SIXFOLD_TD  = 6,
-  TAPPED_TD   = 127,
+  UNKNOWN_TD = 0x00,
+  SINGLE_HOLD_TD,
+  SINGLE_TAP_TD,
+  DOUBLE_HOLD_TD,
+  DOUBLE_TAP_TD,
+  DOUBLE_SINGLE_TAP_TD,
+  TRIPLE_HOLD_TD,
+  TRIPLE_TAP_TD,
+  TRIPLE_SINGLE_TAP_TD,
+  QUADRU_HOLD_TD,
+  QUADRU_TAP_TD,
+  QUADRU_SINGLE_TAP_TD,
+  FIVEFOLD_HOLD_TD,
+  FIVEFOLD_TAP_TD,
+  FIVEFOLD_SINGLE_TAP_TD,
+  SIXFOLD_HOLD_TD,
+  SIXFOLD_TAP_TD,
+  SIXFOLD_SINGLE_TAP_TD,
 };
-uint32_t check_tap_state(qk_tap_dance_state_t *state);
+
+uint8_t check_tap_state(qk_tap_dance_state_t *state);
 
 
 #endif
