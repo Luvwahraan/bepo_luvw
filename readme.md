@@ -45,8 +45,6 @@ Elle a pour effet de placer un calque de la disposition inversée (le `E` devien
 
 Cette fonctionnalité permet de gérer finement les répétitions de touches.
 
-La touche verr.maj n’étant pas placé, elle est accessibles grace la fonctionnalité Tap Dance, en pressant deux fois une des touches *SHIFT*.
-
 Les raccourcis de `F1` à `F10` sont accessibles en tapant plusieurs fois les touches `"` à `)` sur la première ligne. Par exemple `(`→`(`→`(` ferme la fenêtre en cours, en envoyant la séquence `ALT+F4`.
 
 Certains modificateurs s’utilisent également en les tapants plusieurs fois.
@@ -119,8 +117,6 @@ Les touches Tap Dance peuvent être tapées relachées, ou tapées et relachées
 
 Touche    | tap1     | tap2     | tap3       | tap4           | tap5
 ----------|----------|----------|------------|----------------|-------
- `LSHIFT` | `LSHIFT` | `LSHIFT` | `CAPSLOCK` |                |
- `RSHIFT` | `RSHIFT` | `RSHIFT` | `CAPSLOCK` |                |
  `"`      | `"`      | `F1`     | `ALT+F1`   | `CTRL+ALT+F1`  |
  `«`      | `«`      | `F2`     | `ALT+F2`   | `CTRL+ALT+F2`  |
  `»`      | `»`      | `F3`     | `ALT+F3`   | `CTRL+ALT+F3`  |
@@ -131,8 +127,9 @@ Touche    | tap1     | tap2     | tap3       | tap4           | tap5
  `-`      | `-`      | `F8`     | `ALT+F8`   | `CTRL+ALT+F8`  |
  `/`      | `/`      | `F9`     | `ALT+F9`   | `CTRL+ALT+F9`  |
  `*`      | `*`      | `F10`    | `ALT+F10`  | `CTRL+ALT+F10` |
+ `CTRL`   | `CTRL`   | `ALT`    | `CTRL+ALT` |                |
 
-#### Tapées et/ou maintenuer
+##### Tapées et/ou maintenuer
 
 ##### L et R Super/GUI avec les mêmes actions.
 
@@ -140,13 +137,6 @@ nb tap | Tenue          | Relachées
 -------|----------------|---------------
  1     | KC_LGUI        | KC_RGUI
  2     | Affichage FNCT | LALT + LSHIFT
-
-##### LCTRL et RCTRL
-
-nb tap | Tenue          | Relachées
--------|----------------|---------------
- 1     | L/RCTRL        | ENTER
- 2     | L/RCTRL + LALT | ENTER
 
 
 

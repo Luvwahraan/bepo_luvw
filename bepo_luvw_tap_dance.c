@@ -70,18 +70,18 @@ void td_super_finished(qk_tap_dance_state_t *state, void *user_data)
   switch (check_tap_state(state))
   {
     case SINGLE_TD: register_code(KC_RGUI); break;               // single hold
-    case (TAPPED_TD | SINGLE_TD): register_code(KC_LGUI); break; // single tap
+    case (TAPPED_TD + SINGLE_TD): register_code(KC_LGUI); break; // single tap
     case DOUBLE_TD: register_code(KC_LALT | KC_LSHIFT); break;   // double hold
-    case (TAPPED_TD | DOUBLE_TD): layer_or(U32(FNCT)); break;    // double tap
+    case (TAPPED_TD + DOUBLE_TD): layer_or(U32(FNCT)); break;    // double tap
   }
 }
 void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
   switch (check_tap_state(state))
   {
     case SINGLE_TD: unregister_code(KC_RGUI); break;
-    case (TAPPED_TD | SINGLE_TD): unregister_code(KC_LGUI); break;
+    case (TAPPED_TD + SINGLE_TD): unregister_code(KC_LGUI); break;
     case DOUBLE_TD: unregister_code(KC_LALT | KC_LSHIFT); break;
-    case (TAPPED_TD | DOUBLE_TD): layer_xor(U32(FNCT)); break;
+    case (TAPPED_TD + DOUBLE_TD): layer_xor(U32(FNCT)); break;
   }
 }
 
@@ -94,22 +94,15 @@ void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
  */
 void td_allctrl_finished(qk_tap_dance_state_t *state, uint8_t _kc)
 {
-  switch (check_tap_state(state))
+  switch (state->count)
   {
-    case (TRIPLE_TD|TAPPED_TD):   // triple tap
-      register_code(KC_ENTER);
-    case (TAPPED_TD | DOUBLE_TD): // double tap
-      register_code(KC_ENTER);
-    case (TAPPED_TD | SINGLE_TD): // single tap
-      register_code(KC_ENTER);
-      break;
-    case SINGLE_TD:               // single hold
+    case 1:               // single hold
       register_code(_kc);
       break;
-    case DOUBLE_TD:               // double hold
+    case 2:               // double hold
       register_code(KC_LALT);
       break;
-    case TRIPLE_TD:
+    case 3:
       register_code(_kc);
       register_code(KC_LALT);
       break;
@@ -117,22 +110,15 @@ void td_allctrl_finished(qk_tap_dance_state_t *state, uint8_t _kc)
 }
 void td_allctrl_reset(qk_tap_dance_state_t *state, uint8_t _kc)
 {
-  switch (check_tap_state(state))
+  switch (state->count)
   {
-    case (TRIPLE_TD|TAPPED_TD):   // triple tap
-      unregister_code(KC_ENTER);
-    case (TAPPED_TD | DOUBLE_TD): // double tap
-      unregister_code(KC_ENTER);
-    case (TAPPED_TD | SINGLE_TD): // single tap
-      unregister_code(KC_ENTER);
-      break;
-    case SINGLE_TD:               // single hold
+    case 1:               // single hold
       unregister_code(_kc);
       break;
-    case DOUBLE_TD:               // double hold
+    case 2:               // double hold
       unregister_code(KC_LALT);
       break;
-    case TRIPLE_TD:
+    case 3:
       unregister_code(_kc);
       unregister_code(KC_LALT);
       break;
@@ -149,8 +135,8 @@ void td_rctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_r
 uint32_t check_tap_state(qk_tap_dance_state_t *state)
 {
   uint32_t _tap_dance_state = state->count;
-  if (state->interrupted || state->pressed == 0) return _tap_dance_state;
-  else if (state->pressed) return (TAPPED_TD | _tap_dance_state);
+  if (state->pressed) return _tap_dance_state;
+  if (state->interrupted) return (TAPPED_TD + _tap_dance_state);
   return UNKNOWN_TD;
 }
 
