@@ -231,7 +231,7 @@ void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)
       break;
     case UNKNOWN_TD:
     default:
-      register_code(KC_ENTER);
+      register_code(_kc);
       break;
   }
 }
@@ -255,7 +255,7 @@ void td_Mall_reset(qk_tap_dance_state_t *_state, uint8_t _kc)
       break;
     case UNKNOWN_TD:
     default:
-      unregister_code(KC_ENTER);
+      unregister_code(_kc);
       break;
   }
   tdState = 0;
