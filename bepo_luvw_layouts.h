@@ -69,5 +69,6 @@
 #define QP____  ( QWERA_    | U32(PLAY) )
 #define QPN___  ( QWERAK    | U32(PLAY) | U32(NUMK) )
 
+const char* getLayerName(const uint32_t);
 
 #endif

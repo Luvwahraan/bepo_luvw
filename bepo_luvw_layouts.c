@@ -7,6 +7,30 @@
 #include "bepo_luvw_layouts.h"
 #include "bepo_luvw_shortcuts.h"
 
+#ifdef KEYLOGGER_ENABLE
+const char* getLayerName(const uint32_t _layerState)
+{
+  switch (_layerState)
+  {
+    case BEPOA_: return "BEPOA_";
+    case AZERA_: return "AZERA_";
+    case QWERA_: return "QWERA_";
+  // Combined keymaps states
+    case BP____: return "BP____";
+    case BPN___: return "BPN___";
+    case BEPOAK: return "BEPOAK";
+    case QWERAK: return "QWERAK";
+    case AZERAK: return "AZERAK";
+    case AP____: return "AP____";
+    case APN___: return "APN___";
+    case QP____: return "QP____";
+    case QPN___: return "QPN___";
+  }
+  return "______";
+}
+
+#endif
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* keymap: modifiers
@@ -20,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |        | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |------|                                  |------| BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |        |
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
- * |        | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |      |                                  |      | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |        |
+ * | LShift | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |      |                                  |      | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO | RShift |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |             | C+alt|Super |      | Super| C+alt|             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -33,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 _______,     _______,     _______,     _______,     _______,     _______,     _______,        // left hand
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LEAD,
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),
-_______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_BSPC,
+TD_LMAJ,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_BSPC,
 _______,     _______,     _______,     _______,     _______,
                                                                               TD_LALT,    TD_GUI,
                                                                                           LCTLENT,
@@ -42,7 +66,7 @@ _______,     _______,     _______,     _______,     _______,
                           _______,     _______,     _______,     _______,     _______,     _______,     _______, // right hand
                           KC_LEAD,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
-                          KC_BSPC,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
+                          KC_BSPC,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     TD_RMAJ,
                                                     _______,     _______,     _______,     _______,     _______,
 TD_GUI,     TD_RALT,
 RCTLENT,
@@ -57,7 +81,7 @@ TD_RCTRL,   TD_RMAJ,    FN_SPC),
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |   W    |   a  |   u  |   i  |   e  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
- * | e_circ |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  | c_cedil|
+ * |        |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   | Left |  Up  |   %  | PgUp | LDesk|             | C+alt|lsuper|      |rsuper|alt+sh|             | RDesk|PgDown| FLOK | Down | Right|
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -71,7 +95,7 @@ TD_RCTRL,   TD_RMAJ,    FN_SPC),
 BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_DEL,
 KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     _______,
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
-BP_ECRC,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
+_______,      BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                                                               _______,     _______,
                                                                                            _______,
@@ -81,7 +105,7 @@ TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                           KC_DEL,      TD_F6,       TD_F7,       TD_F8,       TD_F9,       TD_F10,      BP_EQUAL, // right hand
                           _______,     BP_DCRC,     BP_V,        BP_D,        BP_L,        BP_J,        BP_Z,
                                        BP_C,        BP_T,        BP_S,        BP_R,        BP_N,        BP_M,
-                          _______,     BP_APOS,     BP_Q,        BP_G,        BP_H,        BP_F,        BP_CCED,
+                          _______,     BP_APOS,     BP_Q,        BP_G,        BP_H,        BP_F,        _______,
                                                     RWS,         KC_PGDOWN,   OSL(FLOK),   KC_DOWN,     KC_RIGHT,
 _______,     _______,
 _______,
@@ -95,7 +119,7 @@ _______,     _______,     _______),
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |   W    |   a  |   u  |   i  |   e  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
- * |   ê    |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  | c_cedil|
+ * |        |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |      |      |   %  |      |      |             | C+alt|LSuper|      |RSuper|alt+sh|             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -108,7 +132,7 @@ _______,     _______,     _______),
 FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_DEL,                        // Left hand
 KC_TAB,      KC_B,        FR_EACU,     KC_P,        KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
-KC_NUBS,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
+_______,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
 TD_COPY,     TD_PASTE,    FR_PERC,     KC_PGUP,     LWS,
                                                                                            _______,     _______,
                                                                                                         _______,
@@ -117,7 +141,7 @@ TD_COPY,     TD_PASTE,    FR_PERC,     KC_PGUP,     LWS,
                           KC_DEL,      FR_AT,       FR_PLUS,     FR_MINS,     FR_SLSH,     FR_ASTR,     FR_EQL,   // Right hand
                           _______,     KC_LBRC,     KC_V,        KC_D,        KC_L,        KC_J,        FR_Z,
                                        KC_C,        KC_T,        KC_S,        KC_R,        KC_N,        FR_M,
-                          _______,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        FR_CCED,
+                          _______,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        _______,
                                                     RWS,         KC_PGDOWN,   OSL(FLOK),   KC_DOWN,     KC_RIGHT,
 _______,     _______,
 _______,
@@ -168,7 +192,7 @@ _______,     MO(QW_S),    _______),
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |   M    |   N  |   R  |   S  |   T  |   C  |------|                                  |------|   ,  |   E  |   I  |   U  |   A  |   W    |
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
- * |   Ç    |   F  |   H  |   G  |   Q  |   '  |      |                                  |      |   K  |   .  |   X  |   Y  |   À  |   Ê    |
+ * |        |   F  |   H  |   G  |   Q  |   '  |      |                                  |      |   K  |   .  |   X  |   Y  |   À  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |             |      |      |      |      |      |             |      |      |   %  |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -179,9 +203,9 @@ _______,     MO(QW_S),    _______),
  */
 [OPEB] = LAYOUT_ergodox(
 BP_EQUAL,    BP_ASTR,     BP_MINUS,    BP_PLUS,     BP_SLASH,    BP_AT,       KC_DEL,                               // left hand
-BP_Z,        BP_J,        BP_L,        BP_D,        BP_V,        BP_DCRC,     KC_LEAD,                                 //
+BP_Z,        BP_J,        BP_L,        BP_D,        BP_V,        BP_DCRC,     KC_LEAD,                              //
 BP_M,        BP_N,        BP_R,        BP_S,        BP_T,        BP_C,                                              //
-BP_CCED,     BP_F,        BP_H,        BP_G,        BP_Q,        BP_APOS,     KC_BSPC,                              //
+_______,     BP_F,        BP_H,        BP_G,        BP_Q,        BP_APOS,     KC_BSPC,                              //
 _______,     _______,     _______,     _______,     _______,                                                        //
                                                                                            _______,     _______,    //
                                                                                                         _______,    //
@@ -190,7 +214,7 @@ _______,     _______,     _______,     _______,     _______,                    
                           KC_DEL,      TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
                           KC_LEAD,     BP_EGRV,     BP_O,        BP_P,        BP_ECUT,     BP_B,        KC_TAB,     //
                                        BP_COMMA,    BP_E,        BP_I,        BP_U,        BP_A,        BP_W,       //
-                          KC_BSPC,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     BP_ECRC,    //
+                          KC_BSPC,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     _______,    //
                                                     _______,     _______,     BP_PERC,     _______,     _______,    //
 _______,     _______,                                                                                               //
 _______,                                                                                                            //
@@ -369,16 +393,16 @@ _______,     _______,     _______),                                             
 FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LBRC,     FR_RBRC,     _______,
 _______,     FR_PIPE,     FR_EACU,     FR_AMP,      KC_O,        FR_EGRV,     _______,
 FR_W,        FR_A,        FR_UGRV,     S(KC_LBRC),  FR_EURO,     FR_COMM,
-FR_SLSH,     FR_BSLS,     FR_LCBR,     FR_RCBR,     FR_DOT,      FR_TILD,     _______,
+_______,     FR_BSLS,     FR_LCBR,     FR_RCBR,     FR_DOT,      FR_TILD,     _______,
 _______,     _______,     _______,     _______,     _______,
                                                                                            _______,     _______,
                                                                                                         _______,
                                                                               KC_UNDS,     KC_LSHIFT,   _______,
 // Right hand
-                          _______,     FR_AT,       FR_PLUS,     FR_MINS,     FR_SLSH,     FR_ASTR,     FR_EQL,
+                          _______,     FR_AT,       FR_PLUS,     FR_MINS,     _______,     FR_ASTR,     FR_EQL,
                           _______,     KC_LBRC,     KC_V,        KC_D,        KC_L,        KC_J,        FR_Z,
                                        KC_C,        KC_T,        KC_S,        KC_R,        KC_N,        FR_M,
-                          _______,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        FR_CCED,
+                          _______,     FR_APOS,     FR_Q,        KC_G,        KC_H,        KC_F,        _______,
                                                     _______,     _______,     _______,     _______,     _______,
 _______,     _______,
 _______,
@@ -392,7 +416,7 @@ _______,     KC_RSHIFT,   KC_UNDS),
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |   W    |   A  |   U  |   I  |   E  |   ;  |------|                                  |------|   C  |   T  |   S  |   R  |   N  |   M    |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
- * |   Ê    |   À  |   Y  |   X  |   :  |   K  |      |                                  |      |   ?  |   Q  |   G  |   H  |   F  |   Ç    |
+ * |        |   À  |   Y  |   X  |   :  |   K  |      |                                  |      |   ?  |   Q  |   G  |   H  |   F  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |      |      |   `  |      |      |             |      |      |      |      |      |             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -406,7 +430,7 @@ _______,     KC_RSHIFT,   KC_UNDS),
 FR_HASH,     FR_1,        FR_2,        FR_3,        FR_4,        FR_5,        _______,
 _______,     S(KC_B),     S(KC_E),     S(KC_P),     S(KC_O),     S(KC_E),     _______,
 S(FR_W),     S(FR_A),     S(KC_U),     S(KC_I),     S(KC_E),     FR_SCLN,
-S(KC_E),     S(FR_AGRV),  S(KC_Y),     S(KC_X),     FR_COLN,     S(KC_K),     _______,
+_______,     S(FR_AGRV),  S(KC_Y),     S(KC_X),     FR_COLN,     S(KC_K),     _______,
 _______,     _______,     FR_GRV,      _______,     _______,
                                                                                            _______,     _______,
                                                                                                         _______,
@@ -415,7 +439,7 @@ _______,     _______,     FR_GRV,      _______,     _______,
                           _______,  FR_6,     FR_7,     FR_8,     FR_9,     FR_0,     FR_OVRR,
                           _______,  FR_EXLM,  S(KC_V),  S(KC_D),  S(KC_L),  S(KC_J),  S(FR_Z),
                                     S(KC_C),  S(KC_T),  S(KC_S),  S(KC_R),  S(KC_N),  S(FR_M),
-                          _______,  FR_QUES,  S(FR_Q),  S(KC_G),  S(KC_H),  S(KC_F),  S(FR_CCED),
+                          _______,  FR_QUES,  S(FR_Q),  S(KC_G),  S(KC_H),  S(KC_F),  _______,
                                               _______,  _______,  _______,  _______,  _______,
 _______,     _______,
 _______,
