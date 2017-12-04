@@ -28,6 +28,8 @@ enum
   SPCFN,
   TDLALT,
   TDRALT,
+  TDBPESC,
+  TDFRESC,
 };
 
 // Tap dance keys
@@ -51,6 +53,8 @@ enum
 #define TD_SPCFN  TD(SPCFN)
 #define TD_RALT   TD(TDRALT)
 #define TD_LALT   TD(TDLALT)
+#define TD_BPESC  TD(TDBPESC)
+#define TD_FRESC  TD(TDFRESC)
 
 
 /* Easy Tap Dance states

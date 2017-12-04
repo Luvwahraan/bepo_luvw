@@ -28,7 +28,6 @@ const char* getLayerName(const uint32_t _layerState)
   }
   return "______";
 }
-
 #endif
 
 
@@ -38,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * We don't want to use this alone. Every alpha keys switch to default base layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |                                  |      |      |      |      |      |      |        |
+ * |        | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |                                  | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |        |
  * |--------+------+------+------+------+-------------|                                  |------+------+------+------+------+------+--------|
  * |        | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO | LEAD |                                  | LEAD | BÉPO | BÉPO | BÉPO | BÉPO | BÉPO |        |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
@@ -49,28 +48,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |      |      |      |      |      |             | C+alt|Super |      | Super| C+alt|             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
  *                                             |  FN  |      |lctrl |      |rctrl |      |  FN  |
- *                                             | space|lshift|------|      |------|rshift|space |
+ *                                             | space| Enter|------|      |------|Enter |space |
  *                                             |      |      | lalt |      |altgr |      |      |
  *                                             `--------------------'      `--------------------'
  */
 [MODA] = LAYOUT_ergodox(
-_______,     _______,     _______,     _______,     _______,     _______,     _______,        // left hand
+_______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),        // left hand
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_LEAD,
 _______,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),
-TD_LMAJ,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_BSPC,
+KC_LSHIFT,   M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_BSPC,
 _______,     _______,     _______,     _______,     _______,
-                                                                              TD_LALT,    TD_GUI,
-                                                                                          LCTLENT,
-                                                                 FN_SPC,      TD_LMAJ,    TD_LCTRL,
+                                                                              TD_LALT,     TD_GUI,
+                                                                                           LCTLENT,
+                                                                 FN_SPC,      KC_ENTER,    TD_LCTRL,
 
-                          _______,     _______,     _______,     _______,     _______,     _______,     _______, // right hand
+                          M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______, // right hand
                           KC_LEAD,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
                                        M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     _______,
-                          KC_BSPC,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     TD_RMAJ,
+                          KC_BSPC,     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     M(SW_I),     KC_RSHIFT,
                                                     _______,     _______,     _______,     _______,     _______,
 TD_GUI,     TD_RALT,
 RCTLENT,
-TD_RCTRL,   TD_RMAJ,    FN_SPC),
+TD_RCTRL,   KC_ENTER,    FN_SPC),
 
 /* keymap 0: default layer
  *
@@ -83,19 +82,19 @@ TD_RCTRL,   TD_RMAJ,    FN_SPC),
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
  * |        |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
- *   | Left |  Up  |   %  | PgUp | LDesk|             | C+alt|lsuper|      |rsuper|alt+sh|             | RDesk|PgDown| FLOK | Down | Right|
+ *   | Left |  Up  |   %  | PgUp | LDesk|             |      |      |      |      |      |             | RDesk|PgDown| FLOK | Down | Right|
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
- *                                             |  FN  |      |lctrl |      |rctrl |      |  FN  |
- *                                             | space|lshift|------|      |------|rshift|space |
- *                                             |      |      | lalt |      |altgr |      |      |
+ *                                             |      |      |      |      |      |      |      |
+ *                                             |      |      |------|      |------|      |      |
+ *                                             |      |      |      |      |      |      |      |
  *                                             `--------------------'      `--------------------'
  */
 [BEPO] = LAYOUT_ergodox(
 //BP_DOLLAR,BP_DQOT,      BP_LGIL,     BP_RGIL,     BP_LPRN,     BP_RPRN,     KC_BSPC,        // left hand
-BP_DOLLAR,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       KC_DEL,
+TD_BPESC,   TD_F1,       TD_F2,       TD_F3,       TD_F4,       TD_F5,       BP_EQUAL,
 KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     _______,
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
-_______,      BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
+_______,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                                                               _______,     _______,
                                                                                            _______,
@@ -121,15 +120,15 @@ _______,     _______,     _______),
  * |--------+------+------+------+------+------| BKSP |                                  | BKSP |------+------+------+------+------+--------|
  * |        |a_grav|   y  |   x  |   .  |   k  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
- *   |      |      |   %  |      |      |             | C+alt|LSuper|      |RSuper|alt+sh|             |      |      |      |      |      |
+ *   |      |      |   %  |      |      |             |      |      |      |      |      |             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
- *                                             |  FN  |      |LCtrl |      | RCtrl|      |  FN  |
- *                                             |space |lshift|------|      |------|rshift| space|
- *                                             |      |      | lalt |      | altgr|      |      |
+ *                                             |      |      |      |      |      |      |      |
+ *                                             |      |      |------|      |------|      |      |
+ *                                             |      |      |      |      |      |      |      |
  *                                             `--------------------'      `--------------------'
  */
 [AZER] = LAYOUT_ergodox(
-FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_DEL,                        // Left hand
+TD_FRESC,    FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LPRN,     FR_RPRN,     KC_DEL,                        // Left hand
 KC_TAB,      KC_B,        FR_EACU,     KC_P,        KC_O,        FR_EGRV,     _______,
 BP_W,        FR_A,        KC_U,        KC_I,        KC_E,        FR_COMM,
 _______,     FR_AGRV,     KC_Y,        KC_X,        FR_DOT,      KC_K,        _______,
@@ -211,14 +210,14 @@ _______,     _______,     _______,     _______,     _______,                    
                                                                                                         _______,    //
                                                                               _______,     _______,     _______,    ////
 
-                          KC_DEL,      TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       BP_DOLLAR,  // right hand
+                          KC_DEL,      TD_F5,       TD_F4,       TD_F3,       TD_F2,       TD_F1,       TD_BPESC,  // right hand
                           KC_LEAD,     BP_EGRV,     BP_O,        BP_P,        BP_ECUT,     BP_B,        KC_TAB,     //
                                        BP_COMMA,    BP_E,        BP_I,        BP_U,        BP_A,        BP_W,       //
                           KC_BSPC,     BP_K,        BP_DOT,      BP_X,        BP_Y,        BP_AGRV,     _______,    //
                                                     _______,     _______,     BP_PERC,     _______,     _______,    //
 _______,     _______,                                                                                               //
 _______,                                                                                                            //
-_______,     _______,     _______),                                                                                 ////
+_______,     _______,     _______),
 
 /* Keymap 2: function
  *
@@ -234,7 +233,7 @@ _______,     _______,     _______),                                             
  *   |      |      |      |      |      |             | NUMK | AZER |      | BEPO | PLAY |             |      |      |      |      | F15  |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
  *                                             |      | Num  | AZ+P |      | BP+P |  F   |      |
- *                                             | SW_P | Lock |------|      |------| Lock | SW_N |
+ *                                             |      | Lock |------|      |------| Lock |      |
  *                                             |      |      |AZ+P+K|      |BP+P+K|      |      |
  *                                             `--------------------'      `--------------------'
  */
@@ -247,7 +246,7 @@ _______,     _______,     _______,     _______,     _______,     _______,     __
 _______,     _______,     _______,     _______,     _______,
                                                                                            TG(NUMK),    M(QAA_),
                                                                                                         M(QAP_),
-                                                                              M(SW_P),     TG(NLOK),    M(QAPK),
+                                                                              _______,     TG(NLOK),    M(QAPK),
 // Right hand
                           KC_MPLY,     KC_F6,       KC_F7,       KC_F8,       KC_F9,       KC_F10,      KC_F11,
                           _______,     _______,     _______,     _______,     _______,     _______,     KC_F12,
@@ -256,7 +255,7 @@ _______,     _______,     _______,     _______,     _______,
                                                     _______,     _______,     _______,     _______,     KC_F15,
 M(QBA_),     TG(PLAY),
 M(QBP_),
-M(QBPK),     TG(FLOK),    M(SW_N)),
+M(QBPK),     TG(FLOK),    _______),
 
 /* Keymap 3: F locked
  *
@@ -369,7 +368,7 @@ _______,     _______,     _______,     _______,      KC_UNDS,                   
                                                     KC_INS,      _______,     _______,     _______,     _______,  //
 FR_COLN,     _______,                                                                                             //
 _______,                                                                                                          //
-_______,     _______,     _______),                                                                               ////
+_______,     _______,     _______),
 /* Keymap 5: bepo with altgr key to azerty compat layer
  *
  * ,--------------------------------------------------.                                  ,--------------------------------------------------.
@@ -379,7 +378,7 @@ _______,     _______,     _______),                                             
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
  * |   w    |   a  |u_grav| trem |   €  |   ,  |------|                                  |------|   c  |   t  |   s  |   r  |   n  |   m    |
  * |--------+------+------+------+------+------|      |                                  |      |------+------+------+------+------+--------|
- * |   /    |   \  |   {  |   }  |   .  |   ~  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |   ç    |
+ * |        |   \  |   {  |   }  |   .  |   ~  |      |                                  |      |   '  |   q  |   g  |   h  |   f  |        |
  * `--------+------+------+------+------+-------------,-------------.      ,-------------`-------------+------+------+------+------+--------'
  *   |      |      |   %  |      |      |             |      |      |      |      |      |             |      |      |      |      |      |
  *   `----------------------------------'      ,------|------|------|      |------+------+------.      `----------------------------------'
@@ -390,7 +389,7 @@ _______,     _______,     _______),                                             
  */
 [AZ_A] = LAYOUT_ergodox(
 // Left hand
-FR_DLR,      FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LBRC,     FR_RBRC,     _______,
+TD_FRESC,    FR_QUOT,     FR_LESS,     FR_GRTR,     FR_LBRC,     FR_RBRC,     _______,
 _______,     FR_PIPE,     FR_EACU,     FR_AMP,      KC_O,        FR_EGRV,     _______,
 FR_W,        FR_A,        FR_UGRV,     S(KC_LBRC),  FR_EURO,     FR_COMM,
 _______,     FR_BSLS,     FR_LCBR,     FR_RCBR,     FR_DOT,      FR_TILD,     _______,

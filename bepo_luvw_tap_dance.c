@@ -338,6 +338,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TCOPY]   = ACTION_TAP_DANCE_DOUBLE(KC_LEFT, KC_COPY),
   [TPASTE]  = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PASTE),
 
+  [TDBPESC] = ACTION_TAP_DANCE_DOUBLE(BP_DOLLAR, KC_ESC),
+  [TDFRESC] = ACTION_TAP_DANCE_DOUBLE(FR_DLR, KC_ESC),
+
   [TRF1]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F1_finished,  td_F1_reset),
   [TRF2]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F2_finished,  td_F2_reset),
   [TRF3]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F3_finished,  td_F3_reset),
