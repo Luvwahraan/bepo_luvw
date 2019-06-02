@@ -15,11 +15,11 @@ void matrix_scan_user(void) {
     leader_end();
 
     /* N
-     * NUMK layer */
+     * NUMK layer
     SEQ_ONE_KEY(BP_N)
     {
       layer_or(biton32(NUMK));
-    }
+    }*/
 
     /* $
      * ESC key */
@@ -30,11 +30,11 @@ void matrix_scan_user(void) {
 
     /* Tab Lead or Z Lead
      * Toggle bépo mirror layer
-     * Active only when bépo activated */
+     * Active only when bépo activated
     SEQ_ONE_KEY((KC_TAB|BP_Z))
     {
       if (layer_state | U32(BEPO) ) layer_xor(biton32(OPEB));
-    }
+    }*/
 
     /* Space space
      * Spacebar FN lock */
