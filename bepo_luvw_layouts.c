@@ -60,7 +60,7 @@ _______,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        KC
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                                                               TD_LALT,     TD_GUI,
                                                                                            LCTLENT,
-                                                                 FN_SPC,      KC_ENTER,    TD_LCTRL,
+                                                                 KC_SPC,      KC_ENTER,    TD_LCTRL,
                           //KC_DEL,    BP_AT,       BP_PLUS,     BP_MINUS,    BP_SLASH,    BP_ASTR,     BP_EQUAL, // right hand
                           KC_DEL,      TD_F6,       TD_F7,       TD_F8,       TD_F9,       TD_F10,      BP_EQUAL, // right hand
                           KC_LEAD,     BP_DCRC,     BP_V,        BP_D,        BP_L,        BP_J,        BP_Z,
@@ -69,7 +69,7 @@ TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                                     RWS,         KC_PGDOWN,   BP_W,        KC_DOWN,     KC_RIGHT,
 TD_GUI,     TD_RALT,
 RCTLENT,
-TD_RCTRL,   KC_ENTER,    FN_SPC),
+TD_RCTRL,   KC_ENTER,    KC_SPC),
 
 /* Keymap 2: function
  *
