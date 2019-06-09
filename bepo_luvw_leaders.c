@@ -8,7 +8,7 @@
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
-  static bool locked = false;
+  //static bool locked = false;
 
   LEADER_DICTIONARY() {
     leading = false;
