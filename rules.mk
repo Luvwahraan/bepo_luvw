@@ -9,7 +9,6 @@ TAP_DANCE_ENABLE = yes
 
 SRC += utils.c
 SRC += bepo_luvw_tap_dance.c
-SRC += bepo_luvw_macros.c
 SRC += bepo_luvw_leaders.c
 SRC += bepo_luvw_layouts.c
 SRC += bepo_luvw_shortcuts.c
