@@ -28,19 +28,6 @@ Les modificateurs sont placés symétriquement sur les pouces, de manière à le
 La plupart d’entre eux sont combinés avec Mod Tap ou Tap Dance.
 La fonctionnalité Mod Tap du firmware QMK permet d’avoir deux fonctions sur une seule touche mod. : une lorsqu’on la garde appuyée (la modification) et une lorsqu’elle est pressée et relachée normalement.
 
-
-### LEAD
-
-La touche *LEAD*, une autre fonctionnalité apportée par QMK, est également employée pour accéder à des macros ou des codes spéciaux. Pour en activer une, il est nécessaire de taper la touche LEAD, puis un ordre spécifique de codes sur n’importe quelle couche.
-
-Par exemple ici `LEAD`→`L`→`O`→`L` passe le layer **LOCK** en seul actif (ce qui ne laisse que la possibilité d’enlever ce layer via la même fonction).
-
-### Mirroirs
-
-Une fonction mirroir BÉPO est disponible via une fonction *LEAD*.
-
-Elle a pour effet de placer un calque de la disposition inversée (le `E` devient `T`, le `L` devient `É`, etc), et est activable/désactivable en alternant auriculaire et index, via *LEAD* puis `TAB` ou `Z`.
-
 ### Tap Dance
 
 Cette fonctionnalité permet de gérer finement les répétitions de touches.
@@ -57,33 +44,6 @@ Des fonctions rapides ont été ajoutées pour naviguer dans les bureaux virtuel
 * `U_D` : vers l’espace de travail du haut
 * `D_D` : vers l’espace de travail du bas.
 
-### Fonctions
-
-Comme dans la version originale, une couche est utilisée pour les touches de fonctions (`F1-12` et plus). C’est sur cette couche qu’on peut gérer les couches, avec les pouces.
-
-Une deuxième couche fonction qui ne remplace que la première ligne est disponible et bloquable (couche **FLOK**).
-
-### Pavé numérique
-
-Le pavé numérique main droite (couche **NUMK**) est décalé par rapport à la version d’origine, de manière à placer l’index sur la touche `T` (`J` en AZERTY), soit la touche avec un marquage sensitif sur la plupart des claviers.
-
-Les claviers numériques standards ont le marquage sur le majeur, mais décaler plus encore aurait remplacé certains modificateurs, rendant l’utilisation à deux mains déstabilisante.
-
-### Jeu
-
-Les modificateurs complexes et autres touches spéciales peuvent rendre les choses compliquées pour les joueurs (par exemple dans Minecraft la touche `É` permet bien d’avancer, mais le personnage ne peut plus s’arrêter).
-
-Une couche (incomplète pour le moment) modifiants les touches ayants plusieurs fonctions ou certains caractères mal pris en charge par des jeux est donc disponible (couche **PLAY**), et plusieurs macros permettent de les activer avec différentes dispositions :
-* BÉPO + **PLAY**
-* BÉPO + **PLAY** + **NUMK**
-* AZERTY + **PLAY**
-* AZERTY + **PLAY** + **NUMK**
-
-### Macros
-
-Deux macros fonctionnants ensembles sont utilisées avec cette keymap : la première permet de changer le set de calques, et la deuxième de naviguer dans les sets de base.
-Elles sont utilisables via les pouces sur la couche **FNCT**, elle-même activable en maintenant une des touches espace.
-
 ## Fonctions
 
 ### Mod Tap
@@ -96,17 +56,6 @@ Pressée         | Tapée
 `AltGr`         | `Enter`
 `LShift`        | `CapsLock`
 `RShift`        | `CapsLock`
-
-
-### Lead
-
- Touche 1 | touche 2 | touche 3 | touche 4 |Fonctionnalité
-----------|----------|----------|----------|---------------
-`$`       |          |          |          | Escape key
-`N`       |          |          |          | Couche pavé numérique (**NUMK**).
-`L`       | `O`      | `L`      |          | Keyboard lock/unlock
-`P`       | `O`      | `W`      | `A`      | Sys power
-`Tab` ou `Z` | `LEAD` |         |          | Toggle BÉPO mirroir
 
 ### Tap dance
 
@@ -136,15 +85,6 @@ nb tap | Tenue          | Relachées
 -------|----------------|---------------
  1     | KC_LGUI        | KC_RGUI
  2     | Affichage FNCT | LALT + LSHIFT
-
-
-##### Shift L&R
-
-nb tap | Tenue          | Relachées
--------|----------------|---------------
-1      | shift          | enter
-2      | altgr          | enter
-
 
 
 # Crédits
