@@ -162,44 +162,6 @@ void td_rctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_r
 // end LCTRL & RCTRL
 
 
-// Space/FN
-void td_SPC_finished(qk_tap_dance_state_t *state, void *user_data)
-{
-  tdState = check_tap_state(state);
-  switch (tdState)
-  {
-    case SINGLE_TAP_TD:
-      register_code(KC_SPC);
-      break;
-    case SINGLE_HOLD_TD:
-      layer_on(FNCT);
-      break;
-    case UNKNOWN_TD:
-    default:
-      register_code(KC_SPC);
-      break;
-  }
-}
-void td_SPC_reset(qk_tap_dance_state_t *state, void *user_data)
-{
-  switch (tdState)
-  {
-    case SINGLE_TAP_TD:
-      unregister_code(KC_SPC);
-      break;
-    case SINGLE_HOLD_TD:
-      layer_off(FNCT);
-      break;
-    case UNKNOWN_TD:
-    default:
-      unregister_code(KC_SPC);
-      break;
-  }
-  tdState = 0;
-}
-// end space/fn
-
-
 // Maj
 void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)
 {
@@ -301,8 +263,6 @@ uint8_t check_tap_state(qk_tap_dance_state_t *_state)
 
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [TDGUI]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_super_finished, td_super_reset),
-
   [TDLALT]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_lalt_finished, td_lalt_reset),
   [TDRALT]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_ralt_finished, td_ralt_reset),
 
@@ -328,6 +288,4 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TRF8]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F8_finished,  td_F8_reset),
   [TRF9]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F9_finished,  td_F9_reset),
   [TRF10]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL,td_F10_finished, td_F10_reset),
-
-  [SPCFN]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_SPC_finished, td_SPC_reset),
 };
