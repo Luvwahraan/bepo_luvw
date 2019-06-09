@@ -28,20 +28,6 @@ void matrix_scan_user(void) {
       send_keystrokes(KC_ESC, KC_NO);
     }
 
-    /* Tab Lead or Z Lead
-     * Toggle bépo mirror layer
-     * Active only when bépo activated
-    SEQ_ONE_KEY((KC_TAB|BP_Z))
-    {
-      if (layer_state | U32(BEPO) ) layer_xor(biton32(OPEB));
-    }*/
-
-    /* Space space
-     * Spacebar FN lock */
-    SEQ_TWO_KEYS(KC_SPC, KC_SPC)
-    {
-      layer_or(biton32(FLOK));
-    }
 
     /* L O L
      * Keyboard lock */
