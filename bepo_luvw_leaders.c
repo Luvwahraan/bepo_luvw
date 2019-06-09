@@ -28,23 +28,6 @@ void matrix_scan_user(void) {
       send_keystrokes(KC_ESC, KC_NO);
     }
 
-
-    /* L O L
-     * Keyboard lock */
-    SEQ_THREE_KEYS(BP_L, BP_O, BP_L)
-    {
-      if (!locked)
-      {
-        locked = true;
-        layer_on(LOCK);
-      }
-      else
-      {
-        layer_off(LOCK);
-        locked = false;
-      }
-    }
-
     /* P O W A
      * System power OFF */
     SEQ_FOUR_KEYS(BP_P, BP_O, BP_W, BP_A)
