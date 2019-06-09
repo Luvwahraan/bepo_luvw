@@ -116,29 +116,6 @@ void td_ralt_reset(qk_tap_dance_state_t *state, void *user_data)
 
 
 
-// Super/GUI keys
-void td_super_finished(qk_tap_dance_state_t *state, void *user_data)
-{
-  tdState = check_tap_state(state);
-  switch (tdState)
-  {
-    case SINGLE_HOLD_TD: register_code(KC_LGUI); break;               // single hold
-    case SINGLE_TAP_TD: register_code(KC_RGUI); break; // single tap
-    case DOUBLE_HOLD_TD: register_code(KC_LALT | KC_LSHIFT); break;   // double hold
-    case DOUBLE_TAP_TD: layer_on(FNCT); break;    // double tap
-  }
-}
-void td_super_reset(qk_tap_dance_state_t *state, void *user_data){
-  switch (tdState)
-  {
-    case SINGLE_HOLD_TD: unregister_code(KC_LGUI); break;
-    case SINGLE_TAP_TD: unregister_code(KC_RGUI); break;
-    case DOUBLE_HOLD_TD: unregister_code(KC_LALT | KC_LSHIFT); break;
-    case DOUBLE_TAP_TD: layer_off(FNCT); break;
-  }
-  tdState = 0;
-}
-
 /* LCTRL & RCTRL
  * nb Hold          | Tap
  * ----------------------------

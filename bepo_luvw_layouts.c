@@ -58,7 +58,7 @@ KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     KC
 BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
 KC_LSHIFT,   BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        KC_BSPC,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
-                                                                              TD_LALT,     TD_GUI,
+                                                                              TD_LALT,     KC_LGUI,
                                                                                            LCTLENT,
                                                                  KC_SPC,      KC_ENTER,    TD_LCTRL,
                           //KC_DEL,    BP_AT,       BP_PLUS,     BP_MINUS,    BP_SLASH,    BP_ASTR,     BP_EQUAL, // right hand
@@ -67,7 +67,7 @@ TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                        BP_C,        BP_T,        BP_S,        BP_R,        BP_N,        BP_M,
                           KC_BSPC,     BP_APOS,     BP_Q,        BP_G,        BP_H,        BP_F,        KC_RSHIFT,
                                                     RWS,         KC_PGDOWN,   _______,     KC_DOWN,     KC_RIGHT,
-TD_GUI,     TD_RALT,
+KC_RGUI,     TD_RALT,
 RCTLENT,
 TD_RCTRL,   KC_ENTER,    KC_SPC),
 
