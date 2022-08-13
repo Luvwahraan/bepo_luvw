@@ -5,7 +5,6 @@
 #include "keymap_bepo.h"
 #include "keymap_french.h"
 //#include "bepo_luvw_tap_dance.h"
-#include "bepo_luvw_macros.h"
 #include "bepo_luvw_layouts.h"
 
 

@@ -185,43 +185,6 @@ void td_rctrl_reset(qk_tap_dance_state_t *state, void *user_data) { td_allctrl_r
 // end LCTRL & RCTRL
 
 
-// Space/FN
-void td_SPC_finished(qk_tap_dance_state_t *state, void *user_data)
-{
-  tdState = check_tap_state(state);
-  switch (tdState)
-  {
-    case SINGLE_TAP_TD:
-      register_code(KC_SPC);
-      break;
-    case SINGLE_HOLD_TD:
-      layer_on(FNCT);
-      break;
-    case UNKNOWN_TD:
-    default:
-      register_code(KC_SPC);
-      break;
-  }
-}
-void td_SPC_reset(qk_tap_dance_state_t *state, void *user_data)
-{
-  switch (tdState)
-  {
-    case SINGLE_TAP_TD:
-      unregister_code(KC_SPC);
-      break;
-    case SINGLE_HOLD_TD:
-      layer_off(FNCT);
-      break;
-    case UNKNOWN_TD:
-    default:
-      unregister_code(KC_SPC);
-      break;
-  }
-  tdState = 0;
-}
-// end space/fn
-
 
 // Maj
 void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)

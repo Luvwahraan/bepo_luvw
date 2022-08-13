@@ -14,49 +14,12 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    /* N
-     * NUMK layer */
-    SEQ_ONE_KEY(BP_N)
-    {
-      layer_or(biton32(NUMK));
-    }
 
     /* $
      * ESC key */
     SEQ_ONE_KEY(BP_DOLLAR)
     {
       send_keystrokes(KC_ESC, KC_NO);
-    }
-
-    /* Tab Lead or Z Lead
-     * Toggle bépo mirror layer
-     * Active only when bépo activated */
-    SEQ_ONE_KEY((KC_TAB|BP_Z))
-    {
-      if (layer_state | U32(BEPO) ) layer_xor(biton32(OPEB));
-    }
-
-    /* Space space
-     * Spacebar FN lock */
-    SEQ_TWO_KEYS(KC_SPC, KC_SPC)
-    {
-      layer_or(biton32(FLOK));
-    }
-
-    /* L O L
-     * Keyboard lock */
-    SEQ_THREE_KEYS(BP_L, BP_O, BP_L)
-    {
-      if (!locked)
-      {
-        locked = true;
-        layer_on(LOCK);
-      }
-      else
-      {
-        layer_off(LOCK);
-        locked = false;
-      }
     }
 
     /* P O W A

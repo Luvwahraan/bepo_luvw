@@ -14,7 +14,6 @@ bool log_enable = true;
 
 #include "utils.h"
 #include "bepo_luvw_tap_dance.h"
-#include "bepo_luvw_macros.h"
 #include "bepo_luvw_leaders.h"
 #include "bepo_luvw_layouts.h"
 
