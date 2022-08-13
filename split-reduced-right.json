@@ -1,0 +1,135 @@
+[
+  {
+    "backcolor": "#cccccc",
+    "name": "Split reduced right",
+    "author": "Luvwahraan",
+    "notes": "Enter needs 2u with double 1u mounting, but two 1u is fine too.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "switchMount": "cherry",
+    "switchBrand": "outemu",
+    "switchType": "PG150R01-1",
+    "plate": true
+  },
+  [
+    {
+      "c": "#a3ccff",
+      "a": 7,
+      "f": 9,
+      "h": 1.5
+    },
+    "⌫",
+    {
+      "c": "#f0b5ff",
+      "a": 0,
+      "f": 5
+    },
+    "@\n^\n6\n\n⑥\n⌥⑥",
+    "+\n±\n7\n¬\n⑦\n⌥⑦",
+    "-\n−\n8\n¼\n⑧\n⌥⑧",
+    "/\n÷\n9\n½\n⑨\n⌥⑨",
+    "*\n×\n0\n¾\n⑩\n⌥⑩",
+    "=\n≠\n°\n′\n⑪\n⌥⑪",
+    "%\n‰\n`\n″\n⑫\n⌥⑫"
+  ],
+  [
+    {
+      "x": 1,
+      "c": "#feffc9",
+      "a": 4,
+      "f": 6
+    },
+    "^\n¡\n!",
+    "v\nˇ",
+    "d\nð\n\nÐ",
+    "l\n/\n\n£",
+    "j\nĳ",
+    "z\nə",
+    {
+      "c": "#970cce",
+      "t": "#cccccc",
+      "a": 3,
+      "f": 9
+    },
+    "⎌\n\n\n\n❖.",
+    {
+      "x": 0.25,
+      "c": "#000000",
+      "a": 4,
+      "f": 2
+    },
+    "reset\n\n\n\n⎄"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#2a4df7",
+      "a": 7,
+      "f": 9,
+      "h": 1.5
+    },
+    "⎆\n\n\n\n⎄"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 1,
+      "c": "#feffc9",
+      "t": "#000000",
+      "a": 0,
+      "f": 6
+    },
+    "c\n©\n\nſ\nç",
+    {
+      "a": 4,
+      "n": true
+    },
+    "t\nþ",
+    "s\nß",
+    "r\n®\n\n™",
+    "n\n~",
+    "m\n¯\n\nº",
+    {
+      "c": "#71f0de",
+      "a": 7,
+      "f": 9
+    },
+    "🕪\n\n\n\n⎈"
+  ],
+  [
+    {
+      "c": "#4c4b4b",
+      "t": "#cccccc",
+      "a": 4,
+      "f": 3
+    },
+    "Reset\nkey\n\n\n\n\nhidden",
+    {
+      "x": -1,
+      "c": "#a3ccff",
+      "t": "#000000",
+      "a": 7,
+      "f": 9
+    },
+    "␣",
+    {
+      "c": "#feffc9",
+      "a": 4,
+      "f": 6
+    },
+    "’\n¿\n?\n̉",
+    "q\n°\n\n̛\n\n\n\n\n\n̉",
+    "g\nµ",
+    "h\n†\n\n‡",
+    {
+      "c": "#71f0de"
+    },
+    "f\n˛\n\nª\n⎇",
+    "w\n˘\n\n\n≣",
+    {
+      "c": "#398c5a",
+      "t": "#cccccc",
+      "a": 7,
+      "f": 9
+    },
+    "🡅"
+  ]
+]

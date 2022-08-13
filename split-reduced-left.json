@@ -1,0 +1,145 @@
+[
+  {
+    "backcolor": "#cccccc",
+    "name": "Split reduced left",
+    "author": "Luvwahraan",
+    "notes": "Tab needs 2u with double 1u mounting, but two 1u each is fine too.\nThere is a reset hidden key, who needs to be in case.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "switchMount": "cherry",
+    "switchBrand": "outemu",
+    "switchType": "PG150R01-1",
+    "plate": true
+  },
+  [
+    {
+      "c": "#f0b5ff",
+      "a": 0,
+      "f": 5
+    },
+    "$\n–\n#\n¶\n⎋",
+    "\"\n—\n1\n„\n①\n⌥①",
+    "«\n<\n2\n”\n②\n⌥②",
+    "»\n>\n3\n”\n③\n⌥③",
+    "(\n[\n4\n⩽\n④\n⌥④",
+    ")\n̏]\n5\n⩾\n④\n⌥④",
+    {
+      "c": "#a3ccff",
+      "a": 7,
+      "f": 7
+    },
+    "🗑️",
+    {
+      "f": 9,
+      "h": 1.5
+    },
+    "⌫",
+    {
+      "c": "#000000",
+      "t": "#cccccc",
+      "a": 4,
+      "f": 2
+    },
+    "reset"
+  ],
+  [
+    {
+      "c": "#970cce",
+      "a": 0,
+      "f": 8
+    },
+    "📄\n\n\n📄\n✂",
+    {
+      "c": "#2a4df7",
+      "a": 7,
+      "f": 9
+    },
+    "⭾\n\n\n\n⎈",
+    {
+      "c": "#feffc9",
+      "t": "#000000",
+      "a": 4,
+      "f": 6
+    },
+    "b\n|\n\n¦",
+    "é\n˝´\n\n˝",
+    "p\n&\n\n§",
+    "o\nœ",
+    {
+      "a": 0
+    },
+    "è\n̏`\n\n`\n⤉"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 7,
+      "c": "#2a4df7",
+      "t": "#cccccc",
+      "a": 7,
+      "f": 9,
+      "h": 1.5
+    },
+    "⎆\n\n\n\n⎄"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#970cce"
+    },
+    "📋",
+    {
+      "c": "#2a4df7"
+    },
+    "⭾\n\n\n\n⎈",
+    {
+      "c": "#feffc9",
+      "t": "#000000",
+      "a": 4,
+      "f": 6
+    },
+    "a\næ",
+    "u\nù",
+    "i\n¨\n\n˙",
+    {
+      "n": true
+    },
+    "e\n€\n\n¤",
+    {
+      "a": 0
+    },
+    ",\n'\n;\n̦̦\n⤈"
+  ],
+  [
+    {
+      "c": "#2a4df7",
+      "a": 7,
+      "f": 4
+    },
+    "",
+    {
+      "c": "#398c5a",
+      "t": "#cccccc",
+      "f": 9
+    },
+    "🡅",
+    {
+      "c": "#71f0de",
+      "t": "#000000",
+      "a": 4,
+      "f": 6
+    },
+    "à\n\\\n\n\n❖",
+    "y\n{\n\n‘\n⌥",
+    {
+      "c": "#feffc9"
+    },
+    "x\n}\n\n’",
+    ".\n…\n:\n·\n⌥",
+    "k\n~",
+    {
+      "c": "#a3ccff",
+      "a": 7,
+      "f": 9
+    },
+    "␣"
+  ]
+]
