@@ -3,7 +3,6 @@
 #include "keymap_bepo.h"
 #include "keymap_french.h"
 #include "bepo_luvw_tap_dance.h"
-#include "bepo_luvw_macros.h"
 #include "bepo_luvw_layouts.h"
 #include "bepo_luvw_shortcuts.h"
 
@@ -32,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //BP_DOLLAR,BP_DQOT,      BP_LGIL,     BP_RGIL,     BP_LPRN,     BP_RPRN,     KC_BSPC,        // left hand
 TD_BPESC,   TD_F1,        TD_F2,       TD_F3,       TD_F4,       TD_F5,       BP_EQUAL,
 KC_TAB,      BP_B,        BP_ECUT,     BP_P,        BP_O,        BP_EGRV,     _______,
-BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,
+BP_W,        BP_A,        BP_U,        BP_I,        BP_E,        BP_COMMA,n
 _______,     BP_AGRV,     BP_Y,        BP_X,        BP_DOT,      BP_K,        _______,
 TD_COPY,     TD_PASTE,    BP_PERC,     KC_PGUP,     LWS,
                                                                               _______,     _______,
