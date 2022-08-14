@@ -30,31 +30,57 @@ enum
   TDRALT,
   TDBPESC,
   TDFRESC,
+  
+  // Added for ortho 4x8
+  TDUNDOEMOJI
+  TDMUTERCTL
+  TDCOPYPASTE
+  TDTABLCTL
+  TDRETCMP
+  TDAGRVSUPER
+  TDYLALT
+  TDFRALT
+  TDWAPP
+  TDEGRVUP
+  TDCOMMADW
 };
 
 // Tap dance keys
-#define TD_COPY   TD(TCOPY)
-#define TD_PASTE  TD(TPASTE)
-#define TD_LMAJ   TD(TDSHIFTENTERL)
-#define TD_RMAJ   TD(TDSHIFTENTERR)
-#define TD_F1     TD(TRF1)
-#define TD_F2     TD(TRF2)
-#define TD_F3     TD(TRF3)
-#define TD_F4     TD(TRF4)
-#define TD_F5     TD(TRF5)
-#define TD_F6     TD(TRF6)
-#define TD_F7     TD(TRF7)
-#define TD_F8     TD(TRF8)
-#define TD_F9     TD(TRF9)
-#define TD_F10    TD(TRF10)
-#define TD_GUI    TD(TDGUI)
-#define TD_LCTRL  TD(TDLCTRL)
-#define TD_RCTRL  TD(TDRCTRL)
-#define TD_SPCFN  TD(SPCFN)
-#define TD_RALT   TD(TDRALT)
-#define TD_LALT   TD(TDLALT)
-#define TD_BPESC  TD(TDBPESC)
-#define TD_FRESC  TD(TDFRESC)
+#define TD_COPY     TD(TCOPY)
+#define TD_PASTE    TD(TPASTE)
+#define TD_LMAJ     TD(TDSHIFTENTERL)
+#define TD_RMAJ     TD(TDSHIFTENTERR)
+#define TD_F1       TD(TRF1)
+#define TD_F2       TD(TRF2)
+#define TD_F3       TD(TRF3)
+#define TD_F4       TD(TRF4)
+#define TD_F5       TD(TRF5)
+#define TD_F6       TD(TRF6)
+#define TD_F7       TD(TRF7)
+#define TD_F8       TD(TRF8)
+#define TD_F9       TD(TRF9)
+#define TD_F10      TD(TRF10)
+#define TD_GUI      TD(TDGUI)
+#define TD_LCTRL    TD(TDLCTRL)
+#define TD_RCTRL    TD(TDRCTRL)
+#define TD_SPCFN    TD(SPCFN)
+#define TD_RALT     TD(TDRALT)
+#define TD_LALT     TD(TDLALT)
+#define TD_BPESC    TD(TDBPESC)
+#define TD_FRESC    TD(TDFRESC)
+
+// Added for ortho 4x8
+#define TD_UNDO     TD(KC_UNDO)
+#define TD_MUTE     TD(KC_MUTE)
+#define TD_COPY     TD(KC_COPY)
+#define TD_TAB      TD(KC_TAB)
+#define TD_ENTER    TD(KC_ENTER)
+#define TD_AGRV     TD(BP_AGRV)
+#define TD_Y        TD(BP_Y)
+#define TD_F        TD(BP_F)
+#define TD_W        TD(BP_W)
+#define TD_EGRV     TD(BP_EGRV)
+#define TD_COMMA    TD(BP_COMMA)
 
 
 /* Easy Tap Dance states

@@ -21,18 +21,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |ESC   |F1    |F2    |F3    |F4    |F5    | DEL  |      | *
      * |------+------+------+------+------+------+------| BKSP | *
      * |COPY  | TAB  | b    | é    | p    | o    | è    |______| *
-     * |CUT   | LCTL |      |      |      |      |      | RET  | *
+     * |CUT   | LCTL |      |      |      |      | PGUP | RET  | *
      * |------+------+------+------+------+------+------|      | *
      * |PASTE | TAB  | a    | u    | i    | e    | ,    |      | *
-     * |      | LCTL |      |      |      |      |      | CMP  | *
+     * |      | LCTL |      |      |      |      | PGDW | CMP  | *
      * |------+------+------+------+------+------+------|------| *
-     * |      | MAJ  | à    | y    | x    | .    | k    |  SPC | *
+     * |      | MAJ  | à    | y    | x    | .    | k    | SPC  | *
      * |      |      | LCTL | LALT |      |      |      |      | *
      * `------+------+------+------+------+------+------+------' */
         TD_BPESC,   TD_F1,      TD_F2,      TD_F3,      TD_F4,      TD_F5,      KC_DEL,     KC_BSPC,  
-        TD_COPY,    KC_TAB,     BP_B,       BP_ECUT,    BP_P,       BP_O,       BP_EGRV,    QK_BOOT,
-        TD_PASTE,   KC_TAB,     BP_A,       BP_U,       BP_I,       BP_E,       BP_COMMA,   KC_ENTER, 
-        _______,    KC_LSHIFT,  BP_AGRV,    BP_Y,       BP_X,       BP_DOT,     BP_K,       KC_SPC
+        TD_COPY,    TD_TAB,     BP_B,       BP_ECUT,    BP_P,       BP_O,       TD_EGRV,    QK_BOOT,
+        KC_PASTE,   TD_TAB,     BP_A,       BP_U,       BP_I,       BP_E,       TD_COMMA,   TD_ENTER, 
+        _______,    KC_LSHIFT,  TD_AGRV,    TD_Y,       BP_X,       BP_DOT,     BP_K,       KC_SPC
     ),
 [1] = LAYOUT_ergodox(
     /* keymap 1: right on left layer                             *
@@ -50,9 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |      |      |      |      |      | RALT | APP  |      | *
      * `------+------+------+------+------+------+------+------' */
         TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     BP_EQUAL,   BP_PERC,    _______, 
-        KC_TAB,     BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       _______,
-        KC_TAB,     BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       _______, 
-        KC_LSHIFT,  BP_APOS,    BP_Q,       BP_G,       BP_H,       BP_F,       BP_W,       _______   
+        TD_TAB,     BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       _______,
+        TD_TAB,     BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       _______, 
+        KC_LSHIFT,  BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       _______   
     )
 };
 
@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |      |      |      |      |      | RALT | APP  |      | *
      * `------+------+------+------+------+------+------+------' *
         KC_BSPC,    TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     BP_EQUAL,   BP_PERC,
-        QK_BOOT,    BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       KC_UNDO,
-        KC_ENTER,   BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       KC_MUTE,
-        KC_SPC,     BP_APOS,    BP_Q,       BP_G,       BP_H,       BP_F,       BP_W,       KC_LSHIFT
+        QK_BOOT,    BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       TD_UNDO,
+        TD_ENTER,   BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       TD_MUTE,
+        KC_SPC,     BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       KC_LSHIFT
     )
 };*/
