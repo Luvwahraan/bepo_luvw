@@ -3,7 +3,8 @@
     "backcolor": "#cccccc",
     "name": "Split reduced right",
     "author": "Luvwahraan",
-    "notes": "Enter needs 2u with double 1u mounting, but two 1u is fine too.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "notes": "Center text:        Hold keys (or tap with emojis)\nLeft/right text:    Tap keys (like caracters)\nLeft legend:        double tap\nCenter legend:      tap/double tap on hold only keys, hold on tap keys\nRight legend:       double tap\n\nRGui (right win key) reserved for compose (tap and double tap on RShift).\nReset is an hidden key, who needs to be in case.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "radii": "10px",
     "switchMount": "cherry",
     "switchBrand": "outemu",
     "switchType": "PG150R01-1",
@@ -61,19 +62,19 @@
   [
     {
       "y": -0.5,
-      "c": "#2a4df7",
+      "c": "#a3ccff",
+      "t": "#000000",
       "a": 7,
       "f": 9,
       "h": 1.5
     },
-    "⎆\n\n\n\n⎄"
+    "⎆"
   ],
   [
     {
       "y": -0.5,
       "x": 1,
       "c": "#feffc9",
-      "t": "#000000",
       "a": 0,
       "f": 6
     },
@@ -96,9 +97,10 @@
   ],
   [
     {
-      "c": "#a3ccff"
+      "c": "#a3ccff",
+      "a": 3
     },
-    "␣",
+    "␣\n\n\n\n\nWS→",
     {
       "c": "#feffc9",
       "a": 4,
@@ -119,6 +121,6 @@
       "a": 7,
       "f": 9
     },
-    "🡅"
+    "🡅\n\n\n\n⎄"
   ]
 ]

@@ -3,7 +3,8 @@
     "backcolor": "#cccccc",
     "name": "Split reduced left",
     "author": "Luvwahraan",
-    "notes": "Tab needs 2u with double 1u mounting, but two 1u each is fine too.\nThere is a reset hidden key, who needs to be in case.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "notes": "Center text:        Hold keys (or tap with emojis)\nLeft/right text:    Tap keys (like caracters)\nLeft legend:        double tap\nCenter legend:      tap/double tap on hold only keys, hold on tap keys\nRight legend:       double tap\n\nTab and shift needs 2u with double 1u mounting, but two 1u each is fine too.\nRGui (right win key) reserved for compose (tap and double tap on LShift).\nReset is an hidden key, who needs to be in case.\n\nhttp://www.keyboard-layout-editor.com/\nhttps://kbfirmware.com/\nhttp://builder.swillkb.com/",
+    "radii": "10px",
     "switchMount": "cherry",
     "switchBrand": "outemu",
     "switchType": "PG150R01-1",
@@ -31,31 +32,25 @@
       "f": 9,
       "h": 1.5
     },
-    "⌫",
-    {
-      "c": "#000000",
-      "t": "#cccccc",
-      "a": 4,
-      "f": 2
-    },
-    "reset"
+    "⌫"
   ],
   [
     {
       "c": "#970cce",
+      "t": "#cccccc",
       "a": 0,
       "f": 8
     },
     "📄\n\n\n📄\n✂",
     {
-      "c": "#2a4df7",
+      "c": "#a3ccff",
+      "t": "#000000",
       "a": 7,
       "f": 9
     },
     "⭾\n\n\n\n⎈",
     {
       "c": "#feffc9",
-      "t": "#000000",
       "a": 4,
       "f": 6
     },
@@ -66,33 +61,42 @@
     {
       "a": 0
     },
-    "è\n̏`\n\n`\n⤉"
+    "è\n̏`\n\n`\n⤉",
+    {
+      "x": 1.25,
+      "c": "#000000",
+      "t": "#cccccc",
+      "a": 4,
+      "f": 2
+    },
+    "reset"
   ],
   [
     {
       "y": -0.5,
       "x": 7,
-      "c": "#2a4df7",
-      "t": "#cccccc",
+      "c": "#a3ccff",
+      "t": "#000000",
       "a": 7,
       "f": 9,
       "h": 1.5
     },
-    "⎆\n\n\n\n⎄"
+    "⎆"
   ],
   [
     {
       "y": -0.5,
-      "c": "#970cce"
+      "c": "#970cce",
+      "t": "#cccccc"
     },
     "📋",
     {
-      "c": "#2a4df7"
+      "c": "#a3ccff",
+      "t": "#000000"
     },
     "⭾\n\n\n\n⎈",
     {
       "c": "#feffc9",
-      "t": "#000000",
       "a": 4,
       "f": 6
     },
@@ -110,17 +114,13 @@
   ],
   [
     {
-      "c": "#2a4df7",
-      "a": 7,
-      "f": 4
-    },
-    "",
-    {
       "c": "#398c5a",
       "t": "#cccccc",
+      "a": 7,
       "f": 9
     },
-    "🡅",
+    "🡅\n\n\n\n⎄",
+    "🡅\n\n\n\n⎄",
     {
       "c": "#71f0de",
       "t": "#000000",
@@ -137,9 +137,9 @@
     "k\n~",
     {
       "c": "#a3ccff",
-      "a": 7,
+      "a": 3,
       "f": 9
     },
-    "␣"
+    "␣\n\n\n\n\n←WS"
   ]
 ]
