@@ -61,6 +61,12 @@ void td_F5_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_rese
 
 void td_F10_finished(qk_tap_dance_state_t *state, void *user_data) { td_Fall_finished(state, BP_ASTR, KC_F10); }
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_reset(state, BP_ASTR, KC_F10); }
+
+void td_F11_finished(qk_tap_dance_state_t *state, void *user_data) { td_Fall_finished(state, BP_EQUAL, KC_F11); }
+void td_F11_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_reset(state, BP_EQUAL, KC_F11); }
+
+void td_F12_finished(qk_tap_dance_state_t *state, void *user_data) { td_Fall_finished(state, BP_PERC, KC_F10); }
+void td_F12_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_reset(state, BP_PERC, KC_F10); }
 // end Function
 
 /*
@@ -184,6 +190,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TRF8]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F8_finished,  td_F8_reset),
   [TRF9]    = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F9_finished,  td_F9_reset),
   [TRF10]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F10_finished, td_F10_reset),
+  [TRF11]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F11_finished, td_F11_reset),
+  [TRF12]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_F12_finished, td_F12_reset),
 
   [SPCFN]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_SPC_finished, td_SPC_reset),
   

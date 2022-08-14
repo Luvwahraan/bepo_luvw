@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * | SPC  | '    | q    | g    | h    | f    | W    |RSHIFT| *
      * | RWS  |      |      |      |      | RALT | APP  | CMP  | *
      * `------+------+------+------+------+------+------+------' *
-        KC_BSPC,    TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     BP_EQUAL,   BP_PERC,
+        KC_BSPC,    TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     TD_F11,     TD_F12,
         QK_BOOT,    BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       TD_UNDO,
         TD_ENTER,   BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       TD_MUTE,
         TD_RLSPC,   BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       TD_RSHIFT

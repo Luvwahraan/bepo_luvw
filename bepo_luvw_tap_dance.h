@@ -70,6 +70,8 @@ enum
 #define TD_F8       TD(TRF8)
 #define TD_F9       TD(TRF9)
 #define TD_F10      TD(TRF10)
+#define TD_F11      TD(TRF11)
+#define TD_F12      TD(TRF12)
 
 #define TD_SPCFN    TD(SPCFN)
 #define TD_RALT     TD(TDRALT)
