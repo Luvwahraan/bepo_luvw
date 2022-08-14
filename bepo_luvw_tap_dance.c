@@ -62,8 +62,8 @@ void td_F10_finished(qk_tap_dance_state_t *state, void *user_data) { td_Fall_fin
 void td_F10_reset(qk_tap_dance_state_t *state, void *user_data)    { td_Fall_reset(state, BP_ASTR, KC_F10); }
 // end Function
 
-
-// Maj
+/*
+// Maj 
 void td_Mall_finished(qk_tap_dance_state_t *_state, uint8_t _kc)
 {
   tdState = check_tap_state(_state);
@@ -118,7 +118,7 @@ void td_LM_finished(qk_tap_dance_state_t *state, void *user_data) { td_Mall_fini
 void td_RM_finished(qk_tap_dance_state_t *state, void *user_data) { td_Mall_finished(state, KC_RSHIFT); }
 void td_LM_reset(qk_tap_dance_state_t *state, void *user_data) { td_Mall_reset(state, KC_LSHIFT); }
 void td_RM_reset(qk_tap_dance_state_t *state, void *user_data) { td_Mall_reset(state, KC_RSHIFT); }
-// end maj
+// end maj*/
 
 
 uint8_t check_tap_state(qk_tap_dance_state_t *_state)
@@ -192,7 +192,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TDCOPYPASTE] = ACTION_TAP_DANCE_DOUBLE(BP_COPY,  BP_PASTE);
   
   [TDTABLCTL]   = ACTION_TAP_DANCE_DOUBLE(KC_TAB,   KC_LCTL);
-  [TDRETCMP]    = ACTION_TAP_DANCE_DOUBLE(KC_ENTER, BP_COMPOSE);
   [TDAGRVSUPER] = ACTION_TAP_DANCE_DOUBLE(BP_AGRV,  BP_LSUPER);
   [TDYLALT]     = ACTION_TAP_DANCE_DOUBLE(BP_Y,     KC_LALT);
   [TDFRALT]     = ACTION_TAP_DANCE_DOUBLE(BP_F,     KC_RALT);
@@ -201,8 +200,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TDCOMMADN]   = ACTION_TAP_DANCE_DOUBLE(BP_COMMA, KC_PGDN);
   
   // Hold: SHIFT, Tap: change workspace
-  [TDLDESKMAJWIN]   = ACTION_TAP_DANCE_DOUBLE(WLWS, KC_LSHIFT);
-  [TDLDESKMAJLINUX] = ACTION_TAP_DANCE_DOUBLE(LWS, KC_LSHIFT);  
-  [TDRDESKMAJWIN]   = ACTION_TAP_DANCE_DOUBLE(WRWS, KC_LSHIFT);
-  [TDRDESKMAJLINUX] = ACTION_TAP_DANCE_DOUBLE(LWS, KC_LSHIFT);
+  [TDLDESKMAJWIN]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_WinLeftShift_finished, td_WinLeftShift_reset);
+  [TDLDESKMAJLINUX] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LinuxLeftShift_finished, td_LinuxLeftShift_reset);
+  [TDRDESKMAJWIN]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RightShift_finished, td_RightShift_reset);
+  [TDRDESKMAJLINUX] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LinuxRightShift_finished, td_LinuxRightShift_reset);
+  
+  
+  [TDRETCMP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_Enter_finished, td_Enter_reset);
 };

@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD_BPESC,   TD_F1,      TD_F2,      TD_F3,      TD_F4,      TD_F5,      KC_DEL,     KC_BSPC,  
         TD_COPY,    TD_TAB,     BP_B,       BP_ECUT,    BP_P,       BP_O,       TD_EGRV,    QK_BOOT,
         KC_PASTE,   TD_TAB,     BP_A,       BP_U,       BP_I,       BP_E,       TD_COMMA,   TD_ENTER, 
-        _______,    KC_LSHIFT,  TD_AGRV,    TD_Y,       BP_X,       BP_DOT,     BP_K,       KC_SPC
+        _______,    TD_LSHIFT,  TD_AGRV,    TD_Y,       BP_X,       BP_DOT,     BP_K,       KC_SPC
     ),
 [1] = LAYOUT_ergodox(
     /* keymap 1: right on left layer                             *
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     BP_EQUAL,   BP_PERC,    _______, 
         TD_TAB,     BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       _______,
         TD_TAB,     BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       _______, 
-        KC_LSHIFT,  BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       _______   
+        TD_LSHIFT,  BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       _______   
     )
 };
 
@@ -76,6 +76,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_BSPC,    TD_F6,      TD_F7,      TD_F8,      TD_F9,      TD_F10,     BP_EQUAL,   BP_PERC,
         QK_BOOT,    BP_DCRC,    BP_V,       BP_D,       BP_L,       BP_J,       BP_Z,       TD_UNDO,
         TD_ENTER,   BP_C,       BP_T,       BP_S,       BP_R,       BP_N,       BP_M,       TD_MUTE,
-        KC_SPC,     BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       KC_LSHIFT
+        KC_SPC,     BP_APOS,    BP_Q,       BP_G,       BP_H,       TD_F,       TD_W,       TD_RSHIFT
     )
 };*/

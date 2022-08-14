@@ -90,8 +90,10 @@ enum
 #define TD_COMMA    TD(TDCOMMADN)
 #define TD_LWMJ     TD(TDLDESKMAJWIN)
 #define TD_LLMJ     TD(TDLDESKMAJLINUX)
-#define TD_RWMJ     TD(TDLDESKMAJWIN)
-#define TD_RLMJ     TD(TDLDESKMAJLINUX)
+#define TD_RWMJ     TD(TDRDESKMAJWIN)
+#define TD_RLMJ     TD(TDRDESKMAJLINUX)
+#define TD_LSHIFT   TD_LLMJ
+#define TD_RSHIFT   TD_RLMJ
 
 
 /* Easy Tap Dance states
