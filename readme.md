@@ -12,21 +12,10 @@ Un certains nombre de fonctionnalités du firmware QMK sont utilisées dans cett
 
 ## Particularités
 
-### Layouts
-
-L’une des principales fonctionnalités des claviers programmables est la gestion des calques, qui permet de superposer et alterner des dispositions différentes sans modifier celle du système.
-
-Les touches mod ont été séparées en calques pour plus de souplesse, et proposées associées aux couches de bases.
-Les couches de bases proposées sont donc composées de deux calques pour être utilisables (**BÉPO** + **MODA** par exemple).
-
-Le calque par défaut (celui avec l’id 0) est un calque modificateurs (**MODA**). Il n’est donc pas possible d’écrire avec, mais un appui sur n’importe quelle touche alpha initialise la macro gérant les associations de calques, passant la disposition en BÉPO.
-
 ### Modificateurs
 
-Les modificateurs sont placés symétriquement sur les pouces, de manière à les combiner facilement sans léser l’alternance des mains.
-
-La plupart d’entre eux sont combinés avec Mod Tap ou Tap Dance.
-La fonctionnalité Mod Tap du firmware QMK permet d’avoir deux fonctions sur une seule touche mod. : une lorsqu’on la garde appuyée (la modification) et une lorsqu’elle est pressée et relachée normalement.
+Les modificateurs et touches spéciales sont placés vers les extérieurs, en fonctions secondaires sur des touches. SHIFT, GUI et ALT étant sur les lignes du bas, et CTRL sur les côtés.
+Ils sont activables en gardant les touches appuyées.
 
 
 ### LEAD
@@ -35,19 +24,6 @@ La touche *LEAD*, une autre fonctionnalité apportée par QMK, est également em
 
 Par exemple ici `LEAD`→`L`→`O`→`L` passe le layer **LOCK** en seul actif (ce qui ne laisse que la possibilité d’enlever ce layer via la même fonction).
 
-### Mirroirs
-
-Une fonction mirroir BÉPO est disponible via une fonction *LEAD*.
-
-Elle a pour effet de placer un calque de la disposition inversée (le `E` devient `T`, le `L` devient `É`, etc), et est activable/désactivable en alternant auriculaire et index, via *LEAD* puis `TAB` ou `Z`.
-
-### Tap Dance
-
-Cette fonctionnalité permet de gérer finement les répétitions de touches.
-
-Les raccourcis de `F1` à `F10` sont accessibles en tapant plusieurs fois les touches `"` à `)` sur la première ligne. Par exemple `(`→`(`→`(` ferme la fenêtre en cours, en envoyant la séquence `ALT+F4`.
-
-Certains modificateurs s’utilisent également en les tapants plusieurs fois.
 
 ### Bureaux virtuels
 
@@ -57,27 +33,23 @@ Des fonctions rapides ont été ajoutées pour naviguer dans les bureaux virtuel
 * `U_D` : vers l’espace de travail du haut
 * `D_D` : vers l’espace de travail du bas.
 
+
+### Tap Dance
+
+La fonctionnalité Mod Tap du firmware QMK permet d’avoir deux fonctions sur une seule touche mod. : une lorsqu’on la garde appuyée (la modification) et une lorsqu’elle est pressée et relachée normalement.
+Cette fonctionnalité permet de gérer finement les répétitions de touches.
+
+Les raccourcis de `F1` à `F10` sont accessibles en tapant plusieurs fois les touches `"` à `)` sur la première ligne. Par exemple `(`→`(`→`(` ferme la fenêtre en cours, en envoyant la séquence `ALT+F4`.
+
+La plupart des modificateurs sont activables grâce à cette fonctionnalité.
+
+
 ### Fonctions
 
 Comme dans la version originale, une couche est utilisée pour les touches de fonctions (`F1-12` et plus). C’est sur cette couche qu’on peut gérer les couches, avec les pouces.
 
 Une deuxième couche fonction qui ne remplace que la première ligne est disponible et bloquable (couche **FLOK**).
 
-### Pavé numérique
-
-Le pavé numérique main droite (couche **NUMK**) est décalé par rapport à la version d’origine, de manière à placer l’index sur la touche `T` (`J` en AZERTY), soit la touche avec un marquage sensitif sur la plupart des claviers.
-
-Les claviers numériques standards ont le marquage sur le majeur, mais décaler plus encore aurait remplacé certains modificateurs, rendant l’utilisation à deux mains déstabilisante.
-
-### Jeu
-
-Les modificateurs complexes et autres touches spéciales peuvent rendre les choses compliquées pour les joueurs (par exemple dans Minecraft la touche `É` permet bien d’avancer, mais le personnage ne peut plus s’arrêter).
-
-Une couche (incomplète pour le moment) modifiants les touches ayants plusieurs fonctions ou certains caractères mal pris en charge par des jeux est donc disponible (couche **PLAY**), et plusieurs macros permettent de les activer avec différentes dispositions :
-* BÉPO + **PLAY**
-* BÉPO + **PLAY** + **NUMK**
-* AZERTY + **PLAY**
-* AZERTY + **PLAY** + **NUMK**
 
 ### Macros
 
@@ -86,27 +58,19 @@ Elles sont utilisables via les pouces sur la couche **FNCT**, elle-même activab
 
 ## Fonctions
 
-### Mod Tap
+### Mod Tap/Hold Tap
 
 Pressée         | Tapée
 ----------------|----------
-`Ctrl + Alt`    | `Home`
-`AltGr + Shift` | `End`
-`LAlt`          | `Enter`
-`AltGr`         | `Enter`
-`LShift`        | `CapsLock`
-`RShift`        | `CapsLock`
+`⎈ gauche`      | `Tab`
+`🡅 gauche`      | `⎄`
+`❖`             | `à`
+`⌥`             | `y`
+`⎇`             | `F`
+`≣`             | `W`
+`🡅 droit`       | `⎄`
+`⎈ droit`       | `Mute`
 
-
-### Lead
-
- Touche 1 | touche 2 | touche 3 | touche 4 |Fonctionnalité
-----------|----------|----------|----------|---------------
-`$`       |          |          |          | Escape key
-`N`       |          |          |          | Couche pavé numérique (**NUMK**).
-`L`       | `O`      | `L`      |          | Keyboard lock/unlock
-`P`       | `O`      | `W`      | `A`      | Sys power
-`Tab` ou `Z` | `LEAD` |         |          | Toggle BÉPO mirroir
 
 ### Tap dance
 
@@ -114,36 +78,23 @@ Les touches Tap Dance peuvent être tapées relachées, ou tapées et relachées
 
 #### Tapées
 
-Touche    | tap1     | tap2     | tap3       | tap4           | tap5
-----------|----------|----------|------------|----------------|-------
- `"`      | `"`      | `F1`     | `ALT+F1`   | `CTRL+ALT+F1`  |
- `«`      | `«`      | `F2`     | `ALT+F2`   | `CTRL+ALT+F2`  |
- `»`      | `»`      | `F3`     | `ALT+F3`   | `CTRL+ALT+F3`  |
- `(`      | `(`      | `F4`     | `ALT+F4`   | `CTRL+ALT+F4`  |
- `)`      | `)`      | `F5`     | `ALT+F5`   | `CTRL+ALT+F5`  |
- `@`      | `@`      | `F6`     | `ALT+F6`   | `CTRL+ALT+F6`  |
- `+`      | `+`      | `F7`     | `ALT+F7`   | `CTRL+ALT+F7`  |
- `-`      | `-`      | `F8`     | `ALT+F8`   | `CTRL+ALT+F8`  |
- `/`      | `/`      | `F9`     | `ALT+F9`   | `CTRL+ALT+F9`  |
- `*`      | `*`      | `F10`    | `ALT+F10`  | `CTRL+ALT+F10` |
- `CTRL`   | `CTRL`   | `ALT`    | `CTRL+ALT` |                |
+Touche    | tap1     | Hold     | tap2     | tap3     | tap4    | 
+----------|----------|----------|----------|----------|---------|
+ `"`      | `"`      |          | `F1`     | `⌥+F1`   | `⎈+F1`  |
+ `«`      | `«`      |          | `F2`     | `⌥+F2`   | `⎈+F2`  |
+ `»`      | `»`      |          | `F3`     | `⌥+F3`   | `⎈+F3`  |
+ `(`      | `(`      |          | `F4`     | `⌥+F4`   | `⎈+F4`  |
+ `)`      | `)`      |          | `F5`     | `⌥+F5`   | `⌥+F5`  |
+ `@`      | `@`      |          | `F6`     | `⌥+F6`   | `⌥+F6`  |
+ `+`      | `+`      |          | `F7`     | `⌥+F7`   | `⌥+F7`  |
+ `-`      | `-`      |          | `F8`     | `⌥+F8`   | `⌥+F8`  |
+ `/`      | `/`      |          | `F9`     | `⌥+F9`   | `⌥+F9`  |
+ `*`      | `*`      |          | `F10`    | `⌥+F10`  | `⌥+F10` |
+ `⎄`      | `⎄`      | `🡅`      | `⎄⎄`     |          |         |
+ `⎌`      | `⎌`      |          | `😊`      |          |         |
+ `🕪`      | `🕪`      | `⎈`      |          |          |         |
+ `ESPACE` | `ESPACE` |          |`Workspace`|          |         |
 
-##### Tapées et/ou maintenuer
-
-##### L et R Super/GUI avec les mêmes actions.
-
-nb tap | Tenue          | Relachées
--------|----------------|---------------
- 1     | KC_LGUI        | KC_RGUI
- 2     | Affichage FNCT | LALT + LSHIFT
-
-
-##### Shift L&R
-
-nb tap | Tenue          | Relachées
--------|----------------|---------------
-1      | shift          | enter
-2      | altgr          | enter
 
 
 
