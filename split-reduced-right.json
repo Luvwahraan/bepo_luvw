@@ -56,7 +56,7 @@
       "a": 4,
       "f": 2
     },
-    "reset\n\n\n\n⎄"
+    "Hidden\nreset\n\n\n\n\nkey"
   ],
   [
     {
@@ -96,18 +96,7 @@
   ],
   [
     {
-      "c": "#4c4b4b",
-      "t": "#cccccc",
-      "a": 4,
-      "f": 3
-    },
-    "Reset\nkey\n\n\n\n\nhidden",
-    {
-      "x": -1,
-      "c": "#a3ccff",
-      "t": "#000000",
-      "a": 7,
-      "f": 9
+      "c": "#a3ccff"
     },
     "␣",
     {
