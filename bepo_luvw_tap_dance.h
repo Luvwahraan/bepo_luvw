@@ -140,38 +140,54 @@ enum
 
 uint8_t check_tap_state(qk_tap_dance_state_t *state);
 
+
+/**************************************************************************
+ * Add predefined action like quantum/process_keycode/process_tap_dance.h *
+ **************************************************************************/
+ 
+
 // Functions (F1, F2, …)
-void td_Fall_finished(qk_tap_dance_state_t*, const uint8_t, const uint8_t);
-void td_Fall_reset(qk_tap_dance_state_t*, const uint8_t, const uint8_t);
-void td_F1_finished(qk_tap_dance_state_t*, void*);
-void td_F1_reset(qk_tap_dance_state_t*, void*);
-void td_F2_finished(qk_tap_dance_state_t*, void*);
-void td_F2_reset(qk_tap_dance_state_t*, void*);
-void td_F3_finished(qk_tap_dance_state_t*, void*);
-void td_F3_reset(qk_tap_dance_state_t*, void*);
-void td_F4_finished(qk_tap_dance_state_t*, void*);
-void td_F4_reset(qk_tap_dance_state_t*, void*);
-void td_F5_finished(qk_tap_dance_state_t*, void*);
-void td_F5_reset(qk_tap_dance_state_t*, void*);
-void td_F6_finished(qk_tap_dance_state_t*, void*);
-void td_F6_reset(qk_tap_dance_state_t*, void*);
-void td_F7_finished(qk_tap_dance_state_t*, void*);
-void td_F7_reset(qk_tap_dance_state_t*, void*);
-void td_F8_finished(qk_tap_dance_state_t*, void*);
-void td_F8_reset(qk_tap_dance_state_t*, void*);
-void td_F9_finished(qk_tap_dance_state_t*, void*);
-void td_F9_reset(qk_tap_dance_state_t*, void*);
-void td_F10_finished(qk_tap_dance_state_t*, void*);
-void td_F10_reset(qk_tap_dance_state_t*, void*);
-void td_F11_finished(qk_tap_dance_state_t*, void*);
-void td_F11_reset(qk_tap_dance_state_t*, void*);
-void td_F12_finished(qk_tap_dance_state_t*, void*);
-void td_F12_reset(qk_tap_dance_state_t*, void*);
+void td_function_finished(qk_tap_dance_state_t*, void*);
+void td_function_reset(qk_tap_dance_state_t*, void*);
+#define FUNCTION_TAP(kc, kcF) \
+    { .fn = {NULL, td_function_finished, td_function_reset}, .user_data = (void *)&((qk_tap_dance_pair_t){kc, kcF}), }
 
 // Tap hold shift
 void td_LShift_finished(qk_tap_dance_state_t*, void*);
 void td_LShift_reset(qk_tap_dance_state_t*, void*);
 void td_RShift_finished(qk_tap_dance_state_t*, void*);
 void td_RShift_reset(qk_tap_dance_state_t*, void*);
+
+
+
+// LShift
+void td_WinLeftShift_finished(qk_tap_dance_state_t *, void *);
+void td_WinLeftShift_reset(qk_tap_dance_state_t *, void *);
+
+// RShift
+void td_RightShift_finished(qk_tap_dance_state_t *, void *);
+void td_RightShift_reset(qk_tap_dance_state_t *, void *);
+
+// Enter
+void td_Enter_finished(qk_tap_dance_state_t *, void *);
+void td_Enter_reset(qk_tap_dance_state_t *, void *);
+
+
+
+
+// Generic hold tap
+
+void td_holdtap_finished(qk_tap_dance_state_t*, void*);
+void td_holdtap_reset(qk_tap_dance_state_t*, void*);
+#define ACTION_HOLD_TAP(kc_tap, kc_hold) \
+    { .fn = {NULL, td_holdtap_finished, td_holdtap_reset}, .user_data = (void *)&((qk_tap_dance_pair_t){kc_tap, kc_hold}), }
+
+// ACTION_HOLD_TAP(kc_tap, kc_hold);
+
+
+
+
+#endif
+
 
 #endif
