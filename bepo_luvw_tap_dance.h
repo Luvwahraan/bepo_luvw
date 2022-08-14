@@ -42,7 +42,7 @@ enum
   TDFRALT
   TDWAPP
   TDEGRVUP
-  TDCOMMADW
+  TDCOMMADN
 };
 
 // Tap dance keys
@@ -60,9 +60,7 @@ enum
 #define TD_F8       TD(TRF8)
 #define TD_F9       TD(TRF9)
 #define TD_F10      TD(TRF10)
-#define TD_GUI      TD(TDGUI)
-#define TD_LCTRL    TD(TDLCTRL)
-#define TD_RCTRL    TD(TDRCTRL)
+
 #define TD_SPCFN    TD(SPCFN)
 #define TD_RALT     TD(TDRALT)
 #define TD_LALT     TD(TDLALT)
@@ -70,17 +68,17 @@ enum
 #define TD_FRESC    TD(TDFRESC)
 
 // Added for ortho 4x8
-#define TD_UNDO     TD(KC_UNDO)
-#define TD_MUTE     TD(KC_MUTE)
-#define TD_COPY     TD(KC_COPY)
-#define TD_TAB      TD(KC_TAB)
-#define TD_ENTER    TD(KC_ENTER)
-#define TD_AGRV     TD(BP_AGRV)
-#define TD_Y        TD(BP_Y)
-#define TD_F        TD(BP_F)
-#define TD_W        TD(BP_W)
-#define TD_EGRV     TD(BP_EGRV)
-#define TD_COMMA    TD(BP_COMMA)
+#define TD_UNDO     TD(TDUNDOEMOJI)
+#define TD_MUTE     TD(TDMUTERCTL)
+#define TD_COPY     TD(TDCOPYPASTE)
+#define TD_TAB      TD(TDTABLCTL)
+#define TD_ENTER    TD(TDRETCMP)
+#define TD_AGRV     TD(TDAGRVSUPER)
+#define TD_Y        TD(TDYLALT)
+#define TD_F        TD(TDFRALT)
+#define TD_W        TD(TDWAPP)
+#define TD_EGRV     TD(TDEGRVUP)
+#define TD_COMMA    TD(TDCOMMADN)
 
 
 /* Easy Tap Dance states

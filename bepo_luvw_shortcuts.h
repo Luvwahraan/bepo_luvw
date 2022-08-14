@@ -22,6 +22,11 @@
 #undef KC_PASTE
 #define KC_COPY     BP_COPY
 #define KC_PASTE    BP_PASTE
+#define BP_COMPOSE  KC_RGUI
+#define BP_LSUPER   KC_LGUI
+#define BP_RSUPER   KC_RGUI
+
+#defice BP_EMOJI    (KC_LGUI|BP_DOT)
 
 // Workspaces
 #define WSADD       ( KC_LALT | KC_INS )    // add workspace
