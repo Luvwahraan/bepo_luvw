@@ -170,6 +170,91 @@ uint8_t check_tap_state(qk_tap_dance_state_t *_state)
 
 
 
+// Hold: shift, Tap: compose, Double tap: compose compose
+void td_LShift_finished(qk_tap_dance_state_t *_state, void *user_data) {
+
+    tdState = check_tap_state(_state);
+    switch (tdState) {
+    case SINGLE_TAP_TD:
+        register_code(BP_COMPOSE);
+        break;
+    case SINGLE_HOLD_TD:
+        register_code(KC_LSHIFT);
+        break;
+    case DOUBLE_TAP_TD:
+        register_code(BP_COMPOSE);
+        unregister_code(BP_COMPOSE);
+        register_code(BP_COMPOSE);
+        break;
+    case UNKNOWN_TD:
+    default:
+        register_code(BP_COMPOSE);
+        break;
+    }
+}
+void td_LShift_reset(qk_tap_dance_state_t *_state, void *user_data) {
+    qk_tap_dance_pair_t *pair = (qk_tap_dance_pair_t *)user_data;
+
+  switch (tdState) {
+    case SINGLE_TAP_TD:
+      unregister_code(BP_COMPOSE);
+      break;
+    case SINGLE_HOLD_TD:
+      unregister_code(KC_LSHIFT);
+      break;
+    case UNKNOWN_TD:
+    case DOUBLE_TAP_TD:
+      unregister_code(BP_COMPOSE);
+    default:
+      unregister_code(BP_COMPOSE);
+      break;
+  }
+  tdState = 0;
+}
+void td_RShift_finished(qk_tap_dance_state_t *_state, void *user_data) {
+
+    tdState = check_tap_state(_state);
+    switch (tdState) {
+    case SINGLE_TAP_TD:
+        register_code(BP_COMPOSE);
+        break;
+    case SINGLE_HOLD_TD:
+        register_code(KC_RSHIFT);
+        break;
+    case DOUBLE_TAP_TD:
+        register_code(BP_COMPOSE);
+        unregister_code(BP_COMPOSE);
+        register_code(BP_COMPOSE);
+        break;
+    case UNKNOWN_TD:
+    default:
+        register_code(BP_COMPOSE);
+        break;
+    }
+}
+void td_RShift_reset(qk_tap_dance_state_t *_state, void *user_data) {
+    qk_tap_dance_pair_t *pair = (qk_tap_dance_pair_t *)user_data;
+
+  switch (tdState) {
+    case SINGLE_TAP_TD:
+      unregister_code(BP_COMPOSE);
+      break;
+    case SINGLE_HOLD_TD:
+      unregister_code(KC_RSHIFT);
+      break;
+    case UNKNOWN_TD:
+    case DOUBLE_TAP_TD:
+      unregister_code(BP_COMPOSE);
+    default:
+      unregister_code(BP_COMPOSE);
+      break;
+  }
+  tdState = 0;
+}
+// End generic hold shift
+
+
+
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TDSHIFTENTERL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LM_finished, td_LM_reset),
   [TDSHIFTENTERR] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RM_finished, td_RM_reset),

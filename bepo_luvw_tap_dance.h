@@ -85,7 +85,6 @@ enum
 #define TD_COPY     TD(TDCOPYPASTE)
 
 // Mod on keys: left keyboard
-#define TD_TAB      TD(TDTABLCTL)
 #define TD_ENTER    TD(TDRETCMP)
 #define TD_AGRV     TD(TDAGRVSUPER)
 #define TD_Y        TD(TDYLALT)
@@ -105,6 +104,9 @@ enum
 // Shift compose
 #define TD_LSHIFT   TD(TDLSCMP)
 #define TD_RSHIFT   TD(TDRSCMP)
+
+// Tap: LCTL, Hold: TAB, Double tap hold:
+#define TD_TAB      TD(TDTABLCTL)
 
 
 /* Easy Tap Dance states
@@ -138,5 +140,38 @@ enum
 
 uint8_t check_tap_state(qk_tap_dance_state_t *state);
 
+// Functions (F1, F2, …)
+void td_Fall_finished(qk_tap_dance_state_t*, const uint8_t, const uint8_t);
+void td_Fall_reset(qk_tap_dance_state_t*, const uint8_t, const uint8_t);
+void td_F1_finished(qk_tap_dance_state_t*, void*);
+void td_F1_reset(qk_tap_dance_state_t*, void*);
+void td_F2_finished(qk_tap_dance_state_t*, void*);
+void td_F2_reset(qk_tap_dance_state_t*, void*);
+void td_F3_finished(qk_tap_dance_state_t*, void*);
+void td_F3_reset(qk_tap_dance_state_t*, void*);
+void td_F4_finished(qk_tap_dance_state_t*, void*);
+void td_F4_reset(qk_tap_dance_state_t*, void*);
+void td_F5_finished(qk_tap_dance_state_t*, void*);
+void td_F5_reset(qk_tap_dance_state_t*, void*);
+void td_F6_finished(qk_tap_dance_state_t*, void*);
+void td_F6_reset(qk_tap_dance_state_t*, void*);
+void td_F7_finished(qk_tap_dance_state_t*, void*);
+void td_F7_reset(qk_tap_dance_state_t*, void*);
+void td_F8_finished(qk_tap_dance_state_t*, void*);
+void td_F8_reset(qk_tap_dance_state_t*, void*);
+void td_F9_finished(qk_tap_dance_state_t*, void*);
+void td_F9_reset(qk_tap_dance_state_t*, void*);
+void td_F10_finished(qk_tap_dance_state_t*, void*);
+void td_F10_reset(qk_tap_dance_state_t*, void*);
+void td_F11_finished(qk_tap_dance_state_t*, void*);
+void td_F11_reset(qk_tap_dance_state_t*, void*);
+void td_F12_finished(qk_tap_dance_state_t*, void*);
+void td_F12_reset(qk_tap_dance_state_t*, void*);
+
+// Tap hold shift
+void td_LShift_finished(qk_tap_dance_state_t*, void*);
+void td_LShift_reset(qk_tap_dance_state_t*, void*);
+void td_RShift_finished(qk_tap_dance_state_t*, void*);
+void td_RShift_reset(qk_tap_dance_state_t*, void*);
 
 #endif
