@@ -32,9 +32,12 @@ enum
   TDFRESC,
   
   // Added for ortho 4x8
+  // juste double tap
   TDUNDOEMOJI
   TDMUTERCTL
   TDCOPYPASTE
+  
+  // hold or tap
   TDTABLCTL
   TDRETCMP
   TDAGRVSUPER
@@ -43,6 +46,12 @@ enum
   TDWAPP
   TDEGRVUP
   TDCOMMADN
+  
+  // hold or tap workspaces 
+  TDLDESKMAJWIN
+  TDLDESKMAJLINUX
+  TDRDESKMAJWIN
+  TDRDESKMAJLINUX
 };
 
 // Tap dance keys
@@ -79,6 +88,10 @@ enum
 #define TD_W        TD(TDWAPP)
 #define TD_EGRV     TD(TDEGRVUP)
 #define TD_COMMA    TD(TDCOMMADN)
+#define TD_LWMJ     TD(TDLDESKMAJWIN)
+#define TD_LLMJ     TD(TDLDESKMAJLINUX)
+#define TD_RWMJ     TD(TDLDESKMAJWIN)
+#define TD_RLMJ     TD(TDLDESKMAJLINUX)
 
 
 /* Easy Tap Dance states

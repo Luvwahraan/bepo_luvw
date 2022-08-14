@@ -44,6 +44,8 @@
 #define RWS         LCA(KC_RIGHT)           // go to right workspace
 #define UWS         LCA(KC_UP)              // go to top workspace
 #define DWS         LCA(KC_DOWN)            // go to bottom workspace
+#define WLWS        (KC_LCTL|KC_GUI|KC_LEFT)// Win10 go to left ws
+#define WRWS        (KC_LCTL|KC_GUI|KC_RIGHT)// Win10 go to rightws
 
 // Windows
 #define MOVW        ( KC_LALT + KC_F7 )     // move window
