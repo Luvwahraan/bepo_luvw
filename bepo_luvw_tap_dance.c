@@ -5,6 +5,7 @@
 #include "bepo_luvw_layouts.h"
 #include "bepo_luvw_shortcuts.h"
 #include "bepo_luvw_tap_dance.h"
+#include "bepo_luvw_lowline_modtap.h"
 
 static uint8_t tdState = 0;
 
@@ -186,26 +187,31 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
   [SPCFN]   = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_SPC_finished, td_SPC_reset),
   
-  // Added for ortho 4x8
+  // Double tap
   [TDUNDOEMOJI] = ACTION_TAP_DANCE_DOUBLE(BP_UNDO,  BP_EMOJI);
   [TDMUTERCTL]  = ACTION_TAP_DANCE_DOUBLE(KC_MUTE,  BP_RCTL);
   [TDCOPYPASTE] = ACTION_TAP_DANCE_DOUBLE(BP_COPY,  BP_PASTE);
   [TDEGRVUP]    = ACTION_TAP_DANCE_DOUBLE(BP_EGRV,  KC_PGUP);
   [TDCOMMADN]   = ACTION_TAP_DANCE_DOUBLE(BP_COMMA, KC_PGDN);
-  
-  // Hold: SHIFT, Tap: change workspace
-  
+
+  // Mod on keys: left keyboard
   [TDTABLCTL]   = ACTION_HOLD_TAP(KC_TAB,   KC_LCTL);
   [TDAGRVSUPER] = ACTION_HOLD_TAP(BP_AGRV,  BP_LSUPER);
   [TDYLALT]     = ACTION_HOLD_TAP(BP_Y,     KC_LALT);
+  [TDLSCMP]     = ACTION_HOLD_TAP(BP_CMP,   KC_LSHIFT);
+  
+  // Mod on keys: right keyboard
   [TDFRALT]     = ACTION_HOLD_TAP(BP_F,     KC_RALT);
   [TDWAPP]      = ACTION_HOLD_TAP(BP_W,     KC_APP);
+
+  // Hold: shift, Tap: compose, Double tap: compose compose
+  [TDLSCMP]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_LShift_finished, td_LShift_reset);
+  [TDRSCMP]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_RShift_finished, td_RShift_reset);
   
   // Change workspace
-  [TDLDESKMAJWIN]   = ACTION_HOLD_TAP(WLWS, KC_LSHIFT);
-  [TDLDESKMAJLINUX] = ACTION_HOLD_TAP(LWS,  KC_LSHIFT);
-  [TDRDESKMAJWIN]   = ACTION_HOLD_TAP(WRWS, KC_RSHIFT);
-  [TDRDESKMAJLINUX] = ACTION_HOLD_TAP(RWS,  KC_RSHIFT);
-  
-  [TDRETCMP] = ACTION_HOLD_TAP(KC_ENTER, BP_COMPOSE);
+  [TDLDESKMAJWIN]   = ACTION_TAP_DANCE_DOUBLE(KC_SPACE, WLWS);
+  [TDLDESKMAJLINUX] = ACTION_TAP_DANCE_DOUBLE(KC_SPACE, LWS);
+  [TDRDESKMAJWIN]   = ACTION_TAP_DANCE_DOUBLE(KC_SPACE, WRWS);
+  [TDRDESKMAJLINUX] = ACTION_TAP_DANCE_DOUBLE(KC_SPACE, RWS);
+
 };

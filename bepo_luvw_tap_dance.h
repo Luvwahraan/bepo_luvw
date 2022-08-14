@@ -39,7 +39,8 @@ enum
   
   // hold or tap
   TDTABLCTL
-  TDRETCMP
+  TDRLSCMP
+  TDRRSCMP
   TDAGRVSUPER
   TDYLALT
   TDFRALT
@@ -76,24 +77,32 @@ enum
 #define TD_BPESC    TD(TDBPESC)
 #define TD_FRESC    TD(TDFRESC)
 
-// Added for ortho 4x8
+// Double tap
 #define TD_UNDO     TD(TDUNDOEMOJI)
 #define TD_MUTE     TD(TDMUTERCTL)
 #define TD_COPY     TD(TDCOPYPASTE)
+
+// Mod on keys: left keyboard
 #define TD_TAB      TD(TDTABLCTL)
 #define TD_ENTER    TD(TDRETCMP)
 #define TD_AGRV     TD(TDAGRVSUPER)
 #define TD_Y        TD(TDYLALT)
+
+// Mod on keys: right keyboard
 #define TD_F        TD(TDFRALT)
 #define TD_W        TD(TDWAPP)
 #define TD_EGRV     TD(TDEGRVUP)
 #define TD_COMMA    TD(TDCOMMADN)
-#define TD_LWMJ     TD(TDLDESKMAJWIN)
-#define TD_LLMJ     TD(TDLDESKMAJLINUX)
-#define TD_RWMJ     TD(TDRDESKMAJWIN)
-#define TD_RLMJ     TD(TDRDESKMAJLINUX)
-#define TD_LSHIFT   TD_LLMJ
-#define TD_RSHIFT   TD_RLMJ
+
+// Workspaces
+#define TD_LWSPC    TD(TDLDESKMAJWIN)
+#define TD_LLSPC    TD(TDLDESKMAJLINUX)
+#define TD_RWSPC    TD(TDRDESKMAJWIN)
+#define TD_RLSPC    TD(TDRDESKMAJLINUX)
+
+// Shift compose
+#define TD_LSHIFT   TD(TDLSCMP)
+#define TD_RSHIFT   TD(TDRSCMP)
 
 
 /* Easy Tap Dance states
